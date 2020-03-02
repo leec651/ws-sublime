@@ -1,4 +1,4 @@
-## other useful plugins
+## Other useful plugins
 ```
 Alignment
 AutoFileName
