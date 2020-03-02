@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+ie. ${1:comments}
+]]></content>
+<description>Coffee Long Snippet</description>
+<tabTrigger>i</tabTrigger>
+<scope>source.notes</scope>
+</snippet>

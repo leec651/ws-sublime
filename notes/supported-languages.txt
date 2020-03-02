@@ -1,0 +1,37 @@
+Actionscript
+Applescript
+ASP
+C
+C++
+C#
+Clojure
+CSS
+D
+Erlang
+Go
+Groovy
+Haskell
+HTML
+Java
+Javascript
+Lua
+Makefile
+Markdown
+Matlab
+Objective-C
+Ocaml
+Pascal
+Perl <-- throws error in console due to reference to Postscript (see Perl.sublime-syntax file)
+PHP
+Python
+R
+Regex
+Ruby
+Scala
+Shell
+SQL
+TCL
+TeX
+XML
+XSL <-- removed from default Sublime packages
+YAML

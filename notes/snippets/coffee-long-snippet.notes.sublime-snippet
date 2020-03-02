@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+::::::::::::::::::::coffee::::::::::::::::::::
+${1:#code}
+::::::::::::::::::::coffee::::::::::::::::::::
+]]></content>
+<description>Coffee Long Snippet</description>
+<tabTrigger>cc</tabTrigger>
+<scope>source.notes</scope>
+</snippet>

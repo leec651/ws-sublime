@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+!                                                          !
+                   ${1:Title}
+!                                                          !
+]]></content>
+<description>Important message for Notes</description>
+<tabTrigger>!!</tabTrigger>
+<scope>source.notes</scope>
+</snippet>

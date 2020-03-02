@@ -1,0 +1,17 @@
+{
+    "scope": "source.coffee - variable.other.coffee",
+    "completions": [
+        {
+            "trigger": "__dirname",
+            "contents": "__dirname$0"
+        },
+        {
+            "trigger": "JSON.stringify(space=2)",
+            "contents": "JSON.stringify($0, null, 2)"
+        },
+        {
+            "trigger": "JSON.stringify()",
+            "contents": "JSON.stringify($0)"
+        },
+    ]
+}

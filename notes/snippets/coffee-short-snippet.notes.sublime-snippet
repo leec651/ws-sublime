@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+<<
+${1:#code}
+>>
+]]></content>
+<description>Coffee Short Snippet</description>
+<tabTrigger>c</tabTrigger>
+<scope>source.notes</scope>
+</snippet>
