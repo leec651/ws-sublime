@@ -16,5 +16,5 @@
       { "id": "nodejsdrun", "caption": "Debug", "command": "node_drun" },
       { "id": "nodejsdrunarguments", "caption": "Debug + arguments", "command": "node_drun_arguments" }
     ]
-  }] 
+  }]
 }]
