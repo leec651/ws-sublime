@@ -27,7 +27,7 @@
       <!-- common libraries -->
       <dict>
         <key>match</key>
-        <string>(_|moment|dayjs|async|hl|request|axios|fs|readline)</string>
+        <string>\b(_|moment|express|ApolloServer|gql|dayjs|async|hl|request|axios|fs|readline)\b</string>
         <key>name</key>
         <string>entity.name.function.coffee</string>
       </dict>
