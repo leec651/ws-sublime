@@ -41,7 +41,9 @@
         <key>match</key>
         <string>(await|module.exports|exports|export default|export)</string>
         <key>name</key>
-        <string>keyword.control.coffee</string>
+        <!-- <string>keyword.control.coffee</string> -->
+        <!-- <string>variable.parameter.function.coffee</string> -->
+        <string>variable.language.coffee</string>
       </dict>
       <dict>
         <key>captures</key>
@@ -462,7 +464,7 @@
       </dict>
       <dict>
         <key>match</key>
-        <string>((?&lt;=console\.)(debug|warn|info|log|error|time|timeEnd|assert))\b</string>
+        <string>((?&lt;=console\.)(table|debug|warn|info|log|error|time|timeEnd|assert))\b</string>
         <key>name</key>
         <string>support.function.console.coffee</string>
       </dict>
