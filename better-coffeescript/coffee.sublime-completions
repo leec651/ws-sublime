@@ -14,7 +14,6 @@
             "trigger": "JSON.stringify()",
             "contents": "JSON.stringify($0)"
         },
-
         // nodejs library
         {
             "trigger": "clearImmediate",
@@ -67,6 +66,22 @@
         {
             "trigger": "console.table",
             "contents": "console.table ${1:object}"
+        },
+        {
+            "trigger": "console.error",
+            "contents": "console.error $0"
+        },
+        {
+            "trigger": "console.warn",
+            "contents": "console.warn $0"
+        },
+        {
+            "trigger": "console.count",
+            "contents": "console.count $0"
+        },
+        {
+            "trigger": "console.assert",
+            "contents": "console.assert ${1:bool}"
         },
         {
             "trigger": "console.time",

@@ -464,7 +464,7 @@
       </dict>
       <dict>
         <key>match</key>
-        <string>((?&lt;=console\.)(table|debug|warn|info|log|error|time|timeEnd|assert))\b</string>
+        <string>((?&lt;=console\.)(assert|table|debug|warn|info|log|error|warn|count|time|timeEnd|assert))\b</string>
         <key>name</key>
         <string>support.function.console.coffee</string>
       </dict>
