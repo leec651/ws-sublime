@@ -1,3 +1,10 @@
+<!--
+	green: entity.name.function.coffee
+	gray: comment.notes
+	red: keyword.operator
+-->
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -2045,6 +2052,10 @@
 				</dict>
 			</array>
 		</dict>
+
+
+
+		<!-- ok -->
 		<dict>
 			<key>comment</key>
 			<string>Comments</string>
@@ -2053,6 +2064,8 @@
 			<key>name</key>
 			<string>comment.notes</string>
 		</dict>
+
+		<!-- not sure -->
 		<dict>
 			<key>comment</key>
 			<string>Line breaks</string>
@@ -2062,7 +2075,7 @@
 			<string>support.function.notes</string>
 		</dict>
 
-
+		<!-- ok -->
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -2080,32 +2093,7 @@
 			<string>keyword.operator.notes</string>
 		</dict>
 
-
-
-
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.other.notes</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Custom tag</string>
-			<key>match</key>
-			<string>:: </string>
-			<key>name</key>
-			<string>keyword.operator.notes</string>
-		</dict>
-
-
-
-
-
-
-
+		<!-- ok -->
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -2122,6 +2110,8 @@
 			<key>name</key>
 			<string>variable.language.notes</string>
 		</dict>
+
+		<!-- ok -->
 		<dict>
 			<key>comment</key>
 			<string>Emphasis</string>
@@ -2130,6 +2120,8 @@
 			<key>name</key>
 			<string>keyword.other.notes</string>
 		</dict>
+
+		<!-- ok -->
 		<dict>
 			<key>comment</key>
 			<string>Arrows</string>
@@ -2138,6 +2130,8 @@
 			<key>name</key>
 			<string>variable.language.notes</string>
 		</dict>
+
+		<!-- ok -->
 		<dict>
 			<key>comment</key>
 			<string>Important, surrounded by &lt;...&gt;</string>
@@ -2146,6 +2140,8 @@
 			<key>name</key>
 			<string>constant.other.date.notes</string>
 		</dict>
+
+		<!-- ok -->
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -2158,26 +2154,28 @@
 			<key>comment</key>
 			<string>Highlights</string>
 			<key>match</key>
-			<string>(\#+[^\#]*\#*)</string>
+			<string>^(\#+[^\#]*\#*)</string>
 			<key>name</key>
 			<string>nothing.notes</string>
 		</dict>
-		<dict>
+<!-- 		<dict>
 			<key>comment</key>
 			<string>Headers</string>
 			<key>match</key>
 			<string>^[^ ][\w+ \-\.]+\:$</string>
 			<key>name</key>
 			<string>entity.name.tag.notes</string>
-		</dict>
-		<dict>
+		</dict> -->
+	<!-- 	<dict>
 			<key>comment</key>
 			<string>Proper headers</string>
 			<key>match</key>
 			<string>^([-=]+\s?\w[\w\s]*[\-=]+)</string>
 			<key>name</key>
 			<string>entity.name.tag.notes</string>
-		</dict>
+		</dict> -->
+
+		<!-- ok -->
 		<dict>
 			<key>comment</key>
 			<string>Single Quotes, as back tics</string>
@@ -2186,6 +2184,8 @@
 			<key>name</key>
 			<string>string.quoted.single.notes</string>
 		</dict>
+
+		<!-- ok -->
 		<dict>
 			<key>comment</key>
 			<string>Double Quotes</string>
@@ -2194,6 +2194,8 @@
 			<key>name</key>
 			<string>string.quoted.double.notes</string>
 		</dict>
+
+		<!-- ok -->
 		<dict>
 			<key>comment</key>
 			<string>Warning/critical</string>
@@ -2202,6 +2204,8 @@
 			<key>name</key>
 			<string>invalid.deprecated.notes</string>
 		</dict>
+
+		<!-- ok -->
 		<dict>
 			<key>comment</key>
 			<string>Emphasis on parentheses</string>
@@ -2210,14 +2214,55 @@
 			<key>name</key>
 			<string>keyword.operator</string>
 		</dict>
-		<dict>
+
+<!-- 		<dict>
 			<key>comment</key>
 			<string>Top-level vocab definitions</string>
 			<key>match</key>
 			<string>^(([\w\+-=\/?!@#$%^&amp;()~]+(\s?[\w\+-=\/?!@#$%^&amp;()~]*)*\:)(?=[ \t][\w\d]))</string>
 			<key>name</key>
 			<string>keyword.other.notes</string>
+		</dict> -->
+
+
+
+		<!-- my stuff begin -->
+		<dict>
+			<key>comment</key>
+			<string>completed list</string>
+			<key>match</key>
+			<string>^[ \t]*\b(x )\b[\w\ \-\.\:\/\@]+</string>
+			<key>name</key>
+			<string>comment.notes</string>
 		</dict>
+
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.notes</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Custom tag</string>
+			<key>match</key>
+			<string>\b(:: |x )\b</string>
+			<key>name</key>
+			<string>support.function.notes</string>
+		</dict>
+
+		<dict>
+			<key>comment</key>
+			<string>chen</string>
+			<key>match</key>
+			<string>\b(?!http|https)\b[\w\ \-\.]+\:</string>
+			<key>name</key>
+			<string>keyword.operator</string>
+		</dict>
+		<!-- my stuff end -->
+
 	</array>
 	<key>scopeName</key>
 	<string>source.notes</string>
