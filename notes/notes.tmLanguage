@@ -4,7 +4,6 @@
 	red: keyword.operator
 -->
 
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -2065,7 +2064,7 @@
 			<string>comment.notes</string>
 		</dict>
 
-		<!-- not sure -->
+		<!-- ok -->
 		<dict>
 			<key>comment</key>
 			<string>Line breaks</string>
@@ -2248,7 +2247,7 @@
 			<key>comment</key>
 			<string>Custom tag</string>
 			<key>match</key>
-			<string>\b(:: |x )\b</string>
+			<string>[ \t]*(:: |- )</string>
 			<key>name</key>
 			<string>support.function.notes</string>
 		</dict>
