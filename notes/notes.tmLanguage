@@ -2247,7 +2247,7 @@
 			<key>comment</key>
 			<string>Custom tag</string>
 			<key>match</key>
-			<string>[ \t]*(:: |- )</string>
+			<string>^[^\w][ \t]*(:: |- )</string>
 			<key>name</key>
 			<string>support.function.notes</string>
 		</dict>
@@ -2256,7 +2256,7 @@
 			<key>comment</key>
 			<string>chen</string>
 			<key>match</key>
-			<string>\b(?!http|https)\b[\w\ \-\.]+\:</string>
+			<string>\b(?!http|https)\b[\w\ \-\.]+[\w]+\:</string>
 			<key>name</key>
 			<string>keyword.operator</string>
 		</dict>
