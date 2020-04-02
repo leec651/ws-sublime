@@ -1029,6 +1029,62 @@
 
 
 
+		<dict>
+			<key>begin</key>
+			<string>(\[)(proto)(\])</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>string.regexp.notes</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>markup.bold.notes</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>string.regexp.notes</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Javascript</string>
+			<key>end</key>
+			<string>(\[)(\\?\/?(end|proto))(\])</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>string.regexp.notes</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>markup.bold.notes</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>string.regexp.notes</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.proto</string>
+				</dict>
+			</array>
+		</dict>
+
+
+
+
+
 
 
 		<dict>
