@@ -2,7 +2,7 @@
   "name": "Monokai Phoenix",
   "author": "Unknown",
   "variables": {
-    "red":    "#e80765",
+    "red":    "#e82577",
     "orange": "#fdad54",
     "green":  "#9cff75",
     "lime":   "#ccff85",
@@ -31,6 +31,16 @@
     "tags_options": "stippled_underline"
   },
   "rules": [
+    {
+      "background": "#E82577FF",
+      "scope": "col_E82577FF",
+      "foreground": "#E8E8E8FF"
+    },
+    {
+      "background": "#E6196FFF",
+      "scope": "col_E6196FFF",
+      "foreground": "#E0E0E0FF"
+    },
     {
       "foreground": "#2A2A2AFF",
       "scope": "col_4DCAFFFF",

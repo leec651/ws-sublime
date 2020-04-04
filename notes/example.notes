@@ -9,6 +9,10 @@ Core Concepts:
 	3. server sent events
 	4. forever frames
 
+// adfsdf
+- Asdf:
+- asdf
+
 ---------------------------------------
  	Example: simple chat room
 ---------------------------------------
@@ -42,7 +46,7 @@ Javascript:
 	    };
 	    $.connection.hub.start().done(function () {
 	        $('#sendmessage').click(function () {
-	            // Call the Send method on the hub. 
+	            // Call the Send method on the hub.
 	            chat.server.send($('#displayname').val(), $('#message').val());
 	            $('#message').val('').focus();
 	        });

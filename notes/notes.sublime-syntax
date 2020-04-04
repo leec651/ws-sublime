@@ -575,7 +575,7 @@ contexts:
 
     - match: (?<!\:)(\/\/.*)
       comment: Comments
-      scope: orange
+      scope: comment
     - match: '^(\-[\-\=]{2}.*)'
       comment: Line breaks
       scope: support.function.notes
@@ -586,12 +586,15 @@ contexts:
         2: keyword.other.notes
     - match: '^(\t*[\-\=\.]+\s(\w+\:)?)'
       comment: Unordered bullets
-      scope: purple
+      scope: lime
       captures:
-        2: orange
+        2: red
+    - match: '\b(?!http|https)\b[\w\ \-\.]+[\w]+\:'
+      comment: chen
+      scope: red
     - match: '^[^\w][ \t]*(:: |- )'
       comment: Custom tag
-      scope: purple
+      scope: lime
     - match: '(\*+[a-zA-Z \t]+\*+)'
       comment: Emphasis
       scope: keyword.other.notes
@@ -621,6 +624,3 @@ contexts:
     - match: '^[ \t]*\b(x )\b[\w\ \-\.\:\/\@]+'
       comment: completed list
       scope: comment.notes
-    - match: '\b(?!http|https)\b[\w\ \-\.]+[\w]+\:'
-      comment: chen
-      scope: orange
