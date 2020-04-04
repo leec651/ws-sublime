@@ -14,7 +14,7 @@ contexts:
   main:
     - match: \b(_|moment|express|ApolloServer|gql|dayjs|async|hl|request|axios|fs|readline)\b
       comment: commonly used libs
-      scope: green
+      scope: lime
     - match: (this|extends|import|from)
       scope: i.bblue
     - match: (await|module.exports|exports|export default|export)

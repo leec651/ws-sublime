@@ -7,7 +7,7 @@
     "green":  "#9cff75",
     "lime":   "#ccff85",
     "blue":   "#0033ff",
-    "bblue":  "#5cceff",
+    "bblue":  "#7ed3f7",
     "yellow": "#ffffbd",
     "purple": "#e896ff",
     "pink":   "#f2c2ff",
@@ -31,6 +31,16 @@
     "tags_options": "stippled_underline"
   },
   "rules": [
+    {
+      "background": "#7ED3F7FF",
+      "scope": "col_7ED3F7FF",
+      "foreground": "#3D3D3DFF"
+    },
+    {
+      "background": "#72CFF7FF",
+      "scope": "col_72CFF7FF",
+      "foreground": "#373737FF"
+    },
     {
       "background": "#E82577FF",
       "scope": "col_E82577FF",
