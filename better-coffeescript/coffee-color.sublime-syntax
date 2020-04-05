@@ -34,12 +34,12 @@ contexts:
     - match: (import|from|require)
       scope: green
     - match: (debugger|\\)
-      scope: red
+      scope: bred
     - match: (await|module.exports|exports|export default|export)
-      scope: i.red
+      scope: i.bred
     - match: \b[A-Z0-9]+[_]*[A-Z0-9]+\b
       comment: constant
-      scope: dyellow
+      scope: b.dblue
     - match: (\([^()]*?\))\s*([=-]>)
       comment: "function ie. ->"
       scope: bblue
@@ -54,7 +54,7 @@ contexts:
       scope: meta.class.instance.constructor
       comment: initiaize a new object
       captures:
-        1: red
+        1: bred
         2: bblue
     - match: "'''"
       captures:
@@ -120,14 +120,14 @@ contexts:
            then|throw|try|unless|when|while|until|loop|do|(?<=for)\s+own
         )(?!\s*:)\b
       comment: control key words
-      scope: red
+      scope: bred
     - match: |-
         (?x)
         and=|or=|!|%|&|\^|\*|\/|(\-)?\-(?!>)|\+\+|\+|~|==|=(?!>)|!=|<=|>=|<<=|>>=|
         >>>=|<>|<|>|!|&&|\.\.(\.)?|\?|\||\|\||\:|\*=|(?<!\()/=|%=|\+=|\-=|&=|
         \^=|\b(?<![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)\b
       comment: operator
-      scope: red
+      scope: bred
     - match: '([a-zA-Z\$_](\w|\$|\.)*\s*(?!\::)((:)|(=))(?!(\s*\(.*\))?\s*((=|-)>)))'
       scope: variable.assignment.coffee
       captures:
@@ -245,22 +245,22 @@ contexts:
     - match: '\#\{'
       comment: stirng with #{}
       captures:
-        0: red
+        0: bred
       push:
         - meta_scope: white
         - match: '\}'
           captures:
-            0: red
+            0: bred
           pop: true
         - include: main
     - match: <%
       captures:
-        0: red
+        0: bred
       push:
         - meta_scope: source.coffee.embedded.source
         - match: "%>"
           captures:
-            0: red
+            0: bred
           pop: true
         - include: main
   numeric:

@@ -1,6 +1,5 @@
 %YAML 1.2
 ---
-# http://www.sublimetext.com/docs/3/syntax.html
 name: Notes
 file_extensions:
   - notes
@@ -553,15 +552,31 @@ contexts:
             4: string.regexp.notes
           pop: true
         - include: scope:source.yaml
-    # non-lang nonlang
-    - match: '^[ \t]*(x )[\w\ \-\.\:\/\@]+'
+
+    #############################################
+    #              non-lang nonlang             #
+    #############################################
+    - match: '^\s*(:: |- |\. |\+)'
+      comment: unordered list
+      scope: lime
+    - match: '^\s*(x |v )[\w\ \-\.\:\/\@]+'
       comment: completed list
       scope: comment
-    - match: '\b(?!http|https)\b([\w\ \-\.]+)([\w]+\:)( )'
-      comment: definition & header
-      scope: red
-    - match: '^\s*(:: |- )'
-      comment: definition & header
+    - match: '[^\w](ie\.|ex\.|fyi|wrt|re)\s+'
+      comment: key words
+      scope: bred
+    - match: |-
+        (?!http|https)[\w\ \-\.]*[\w%]+(: )
+      comment: |-
+        definition & header:
+        1. ignore http and https
+        2. take as many spaces as you want
+        3. any char
+        4. end with a single space
+      scope: bred
+    - match: |-
+        \b(https?|ftp)://[^\s/$.?#].[^\s]*\b
+      comment: url
       scope: lime
     - match: (?<!\:)(\/\/.*)
       comment: Comments
@@ -571,14 +586,9 @@ contexts:
       scope: support.function.notes
     - match: '^([ \t]*[0-9a-z]+[\:\.\)]\)?\s(\w+\:)?)'
       comment: Ordered bullets
-      scope: red
+      scope: bred
       captures:
         2: white
-    - match: '^(\t*[\-\=\.]+\s(\w+\:)?)'
-      comment: Unordered bullets
-      scope: lime
-      captures:
-        2: red
     - match: '(\*+[a-zA-Z \t]+\*+)'
       comment: Emphasis
       scope: keyword.other.notes
