@@ -217,20 +217,6 @@ contexts:
             4: string.regexp.notes
           pop: true
         - include: scope:source.java
-    - match: ^::::::::::::::::::::(cc|coffee)::::::::::::::::::::$
-      comment: Coffeescript
-      captures:
-        1: string.regexp.notes
-        2: markup.bold.notes
-        3: string.regexp.notes
-      push:
-        - match: ^::::::::::::::::::::(cc|coffee)::::::::::::::::::::$
-          captures:
-            1: string.regexp.notes
-            3: markup.bold.notes
-            4: string.regexp.notes
-          pop: true
-        - include: scope:source.coffee
     - match: ^(cc|<<)$
       comment: Coffeescript
       captures:
@@ -567,7 +553,16 @@ contexts:
             4: string.regexp.notes
           pop: true
         - include: scope:source.yaml
-    # non-lang
+    # non-lang nonlang
+    - match: '^[ \t]*(x )[\w\ \-\.\:\/\@]+'
+      comment: completed list
+      scope: comment
+    - match: '\b(?!http|https)\b([\w\ \-\.]+)([\w]+\:)( )'
+      comment: definition & header
+      scope: red
+    - match: '^\s*(:: |- )'
+      comment: definition & header
+      scope: lime
     - match: (?<!\:)(\/\/.*)
       comment: Comments
       scope: comment
@@ -576,29 +571,23 @@ contexts:
       scope: support.function.notes
     - match: '^([ \t]*[0-9a-z]+[\:\.\)]\)?\s(\w+\:)?)'
       comment: Ordered bullets
-      scope: keyword.operator.notes
+      scope: red
       captures:
-        2: keyword.other.notes
+        2: white
     - match: '^(\t*[\-\=\.]+\s(\w+\:)?)'
       comment: Unordered bullets
       scope: lime
       captures:
         2: red
-    - match: '\b(?!http|https)\b([\w\ \-\.]+)([\w]+\:)( )'
-      comment: definition
-      scope: red
-    - match: '^[^\w][ \t]*(:: |- )'
-      comment:
-      scope: lime
     - match: '(\*+[a-zA-Z \t]+\*+)'
       comment: Emphasis
       scope: keyword.other.notes
     - match: (-+>||=+>||<=+||<-+)
       comment: Arrows
-      scope: variable.language.notes
+      scope: bblue
     - match: '(\<[^\>]*\>)'
       comment: Important, surrounded by <...>
-      scope: constant.other.date.notes
+      scope: purple
     - match: '^(\#+[^\#]*\#*)'
       comment: Highlights
       scope: nothing.notes
@@ -606,16 +595,13 @@ contexts:
         1: bblue
     - match: '(\`[^\`]*\`)'
       comment: Single Quotes, as back tics
-      scope: string.quoted.single.notes
+      scope: string
     - match: '(\"[^\"]*\")'
       comment: Double Quotes
-      scope: string.quoted.double.notes
+      scope: string
     - match: '(?![a-zA-Z])\!+[^\!\n\r]+\!*'
       comment: Warning/critical
       scope: invalid.deprecated.notes
-    - match: '([\(\)])'
+    - match: '([\{\(\)\}])'
       comment: Emphasis on parentheses
       scope: keyword.operator
-    - match: '^[ \t]*\b(x )\b[\w\ \-\.\:\/\@]+'
-      comment: completed list
-      scope: comment.notes
