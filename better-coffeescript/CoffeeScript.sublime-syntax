@@ -12,28 +12,50 @@ first_line_match: ^#!.*\bcoffee
 scope: source.coffee
 contexts:
   main:
-    - match: \b(_|moment|express|ApolloServer|gql|dayjs|async|hl|request|axios|fs|readline)\b
-      comment: commonly used libs
-      scope: lime
-    - match: (this|extends|import|from)
-      scope: i.bblue
-    - match: (await|module.exports|exports|export default|export)
+    - match: |-
+        \b(moment|express|ApolloServer|gql|dayjs|async|hl|request|axios|fs|readline|Vue|Vuex|_|path)\b
+      comment: common libs
+      scope: white
+    - match: \b[0-9]+\b
+      comment: number
+      scope: purple
+    - match: |-
+        (?x)((?<=\.)(
+          apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce(Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|unshift|valueOf|assign|chunk|compact|difference|differenceBy|differenceWith|drop|dropRight|dropRightWhile|dropWhile|fill|findIndex|findLastIndex|first|flatten|flattenDeep|flattenDepth|fromPairs|head|initial|intersection|intersectionBy|intersectionWith|last|nth|pull|pullAll|pullAllBy|pullAllWith|pullAt|remove|sortedIndex|sortedIndexBy|sortedIndexOf|sortedLastIndex|sortedLastIndexBy|sortedLastIndexOf|sortedUniq|sortedUniqBy|tail|take|takeRight|takeRightWhile|takeWhile|union|unionBy|unionWith|uniq|uniqBy|uniqueId|uniqWith|unzip|unzipWith|without|xor|xorBy|xorWith|zip|zipObject|zipObjectDeep|zipWith|countBy|each|eachRight|find|findLast|flatMap|flatMapDeep|flatMapDepth|forEachRight|groupBy|includes|invokeMap|keyBy|orderBy|partition|reduce|reduceRight|reject|sample|sampleSize|shuffle|size|sortBy|now|after|ary|before|bind|bindKey|curry|toPath|curryRight|debounce|defer|delay|flip|memoize|negate|once|overArgs|partial|partialRight|rearg|rest|spread|throttle|unary|wrap|castArray|clone|cloneDeep|cloneDeepWith|cloneWith|conformsTo|eq|gt|gte|isArguments|isArray|isArrayBuffer|isArrayLike|isArrayLikeObject|isBoolean|isBuffer|isDate|isElement|isEmpty|isEqual|isEqualWith|isError|isFinite|isFunction|isInteger|isLength|isMap|isMatch|isMatchWith|isNaN|isNative|isNil|isNull|isNumber|isObject|isObjectLike|isPlainObject|isRegExp|isSafeInteger|isSet|isString|isSymbol|isTypedArray|isUndefined|isWeakMap|isWeakSet|lt|lte|toArray|toFinite|toInteger|toLength|toNumber|toPlainObject|toSafeInteger|toString|add|ceil|divide|floor|max|maxBy|mean|meanBy|min|minBy|multiply|round|subtract|sum|sumBy|clamp|inRange|random|assignIn|assignInWith|assignWith|at|create|defaults|defaultsDeep|entries|entriesIn|extend|extendWith|findKey|findLastKey|forIn|forInRight|forOwn|forOwnRight|functions|functionsIn|get|has|hasIn|invert|invertBy|invoke|keys|keysIn|mapKeys|mapValues|merge|mergeWith|omit|omitBy|pick|pickBy|result|set|setWith|toPairs|toPairsIn|transform|unset|update|updateWith|values|valuesIn|chain|tap|thru|camelCase|capitalize|deburr|endsWith|escape|escapeRegExp|kebabCase|lowerCase|lowerFirst|pad|padEnd|padStart|parseInt|repeat|replace|snakeCase|split|startCase|startsWith|template|toLower|toUpper|trim|trimEnd|trimStart|truncate|unescape|upperCase|upperFirst|words|attempt|bindAll|cond|conforms|constant|defaultTo|flow|flowRight|identity|iteratee|matches|matchesProperty|method|methodOf|mixin|noConflict|noop|nthArg|over|overEvery|overSome|property|propertyOf|range|rangeRight|runInContext|stubArray|stubFalse|stubObject|stubString|stubTrue|times
+        ))\b
+      comment: common functions
       scope: bblue
-    - match: \b[A-Z_]+\b
-      scope: normal
-    - match: '(\([^()]*?\))\s*([=-]>)'
+    - match: |-
+        (?x)\b(
+          Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol
+        )\b
+      comment: common clasee
+      scope: bblue
+    - match: (this|extends|import|from|require)
+      scope: i.bblue
+    - match: (debugger|\\)
+      scope: red
+    - match: (await|module.exports|exports|export default|export)
+      scope: i.red
+    - match: \b[A-Z0-9]+[_]*[A-Z0-9]+\b
+      comment: constant
+      scope: dyellow
+    - match: (\([^()]*?\))\s*([=-]>)
       comment: "function ie. ->"
       scope: bblue
       captures:
-        1: variable.parameter.function.coffee
-        2: storage.type.function.coffee
+        1: orange
+        2: bblue
+    - match: ([=-]>)
+      scope: bblue
     - match: ((?<=console\.)(assert|table|debug|warn|info|log|error|warn|count|time|timeEnd|assert))\b
       scope: bblue
     - match: (new)\s+((?!class)\w+(?:\.\w*)*)
       scope: meta.class.instance.constructor
+      comment: initiaize a new object
       captures:
-        1: keyword.control.coffee
-        2: i.bblue
+        1: red
+        2: bblue
     - match: "'''"
       captures:
         0: string
@@ -97,13 +119,15 @@ contexts:
            break|by|catch|continue|else|finally|for|in|of|if|return|yield|switch|
            then|throw|try|unless|when|while|until|loop|do|(?<=for)\s+own
         )(?!\s*:)\b
-      scope: keyword.control.coffee
+      comment: control key words
+      scope: red
     - match: |-
         (?x)
         and=|or=|!|%|&|\^|\*|\/|(\-)?\-(?!>)|\+\+|\+|~|==|=(?!>)|!=|<=|>=|<<=|>>=|
         >>>=|<>|<|>|!|&&|\.\.(\.)?|\?|\||\|\||\:|\*=|(?<!\()/=|%=|\+=|\-=|&=|
         \^=|\b(?<![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)\b
-      scope: keyword.operator.coffee
+      comment: operator
+      scope: red
     - match: '([a-zA-Z\$_](\w|\$|\.)*\s*(?!\::)((:)|(=))(?!(\s*\(.*\))?\s*((=|-)>)))'
       scope: variable.assignment.coffee
       captures:
@@ -129,10 +153,11 @@ contexts:
         (\s*)
         (?=[a-zA-Z\$_@])
         (
-           [a-zA-Z\$_@](\w|\$|:|\.)*\s*
-           (?=[:=]( (\s*.\( ($)) | (\s*\(.*\) )?\s*([=-]>)))
+          [a-zA-Z\$_@](\w|\$|:|\.)*\s*
+          (?=[=]( (\s*.\( ($)) | (\s*\(.*\) )?\s*([=-]>)))
         )
       scope: meta.function.coffee
+      comment: declaring a function ie. "add = () ->"
       captures:
         2: entity.name.function.coffee
         3: entity.name.function.coffee
@@ -147,12 +172,14 @@ contexts:
         - include: main
     - match: "[=-]>"
       scope: b.bblue
+    - match: \b(Infinity|NaN|undefined)\b
+      scope: purple
     - match: '\b(?<!\.)(true|on|yes)(?!\s*[:=])\b'
-      scope: pink
+      scope: purple
     - match: '\b(?<!\.)(false|off|no)(?!\s*[:=])\b'
-      scope: pink
+      scope: purple
     - match: '\b(?<!\.)null(?!\s*[:=])\b'
-      scope: pink
+      scope: purple
     - match: '\b(?<!\.)(this|extends)(?!\s*[:=])\b'
       scope: variable.language.coffee
     - match: '(class\b)\s+((?!extends)@?[a-zA-Z\$_][\w\.]*)?(?:\s*(extends)\s+(@?[a-zA-Z\$\._][\w\.]*))?'
@@ -162,29 +189,10 @@ contexts:
         2: entity.name.type.class.coffee
         3: keyword.control.inheritance.coffee
         4: entity.other.inherited-class.coffee
-    - match: \b(debugger|\\)\b
-      scope: keyword.other.coffee
-    - match: |-
-        (?x)\b(
-           Array|ArrayBuffer|Blob|Boolean|Date|document
-           |event|Float(32|64)Array|Function|
-           Int(8|16|32|64)Array|Math|Map|Number|
-           Object|Proxy|RegExp|Set|String|WeakMap|
-           window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol
-        )\b
-      scope: support.class.coffee
     - match: |-
         (?x)\b(
            decodeURI(Component)?|encodeURI(Component)?|eval|parse(Float|Int)|require
         )\b
-      scope: bblue
-    - match: |-
-        (?x)((?<=\.)(
-           apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|
-           isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|
-           reduce(Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|
-           unshift|valueOf
-        ))\b
       scope: bblue
     - match: |-
         (?x)((?<=Array\.)(
@@ -210,20 +218,6 @@ contexts:
            is(Finite|Integer|NaN)|toInteger
         ))\b
       scope: support.function.static.number.coffee
-    - match: \b(Infinity|NaN|undefined)\b
-      scope: pink
-    - match: \;
-      scope: punctuation.terminator.statement.coffee
-    - match: ',[ |\t]*'
-      scope: meta.delimiter.object.comma.coffee
-    - match: \.
-      scope: meta.delimiter.method.period.coffee
-    - match: '\{|\}'
-      scope: meta.brace.curly.coffee
-    - match: \(|\)
-      scope: meta.brace.round.coffee
-    - match: '\[|\]\s*'
-      scope: meta.brace.square.coffee
     - include: instance_variable
     - include: single_quoted_string
     - include: double_quoted_string
@@ -239,7 +233,7 @@ contexts:
             0: string
           pop: true
         - match: '\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)'
-          scope: pink
+          scope: purple
         - include: interpolated_coffee
   embedded_comment:
     - match: (?<!\\)(#).*$\n?
@@ -251,40 +245,41 @@ contexts:
       scope: variable.other.readwrite.instance.coffee
   interpolated_coffee:
     - match: '\#\{'
+      comment: stirng with #{}
       captures:
-        0: punctuation.section.embedded.coffee
+        0: red
       push:
-        - meta_scope: source.coffee.embedded.source
+        - meta_scope: white
         - match: '\}'
           captures:
-            0: punctuation.section.embedded.coffee
+            0: red
           pop: true
         - include: main
     - match: <%
       captures:
-        0: punctuation.section.embedded.coffee
+        0: red
       push:
         - meta_scope: source.coffee.embedded.source
         - match: "%>"
           captures:
-            0: punctuation.section.embedded.coffee
+            0: red
           pop: true
         - include: main
   numeric:
     - match: '(?<!\$)\b((0([box])[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?(e[+\-]?[0-9]+)?))\b'
-      scope: pink
+      scope: purple
   single_quoted_string:
     - match: "'"
       captures:
         0: string
       push:
-        - meta_scope: string.quoted.single.coffee
+        - meta_scope: string
         - match: "'"
           captures:
             0: string
           pop: true
         - match: '\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)'
-          scope: pink
+          scope: purple
   variable_name:
     - match: '([a-zA-Z\$_]\w*(\.\w+)*)'
       scope: variable.assignment.coffee

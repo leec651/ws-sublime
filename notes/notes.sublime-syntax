@@ -567,12 +567,7 @@ contexts:
             4: string.regexp.notes
           pop: true
         - include: scope:source.yaml
-
-
-
-
-
-
+    # non-lang
     - match: (?<!\:)(\/\/.*)
       comment: Comments
       scope: comment
@@ -589,11 +584,11 @@ contexts:
       scope: lime
       captures:
         2: red
-    - match: '\b(?!http|https)\b[\w\ \-\.]+[\w]+\:'
-      comment: chen
+    - match: '\b(?!http|https)\b([\w\ \-\.]+)([\w]+\:)( )'
+      comment: definition
       scope: red
     - match: '^[^\w][ \t]*(:: |- )'
-      comment: Custom tag
+      comment:
       scope: lime
     - match: '(\*+[a-zA-Z \t]+\*+)'
       comment: Emphasis

@@ -2,16 +2,18 @@
   "name": "Monokai Phoenix",
   "author": "Unknown",
   "variables": {
-    "red":    "#e82577",
-    "orange": "#fdad54",
-    "green":  "#9cff75",
-    "lime":   "#ccff85",
-    "blue":   "#0033ff",
-    "bblue":  "#7ed3f7",
-    "yellow": "#ffffbd",
-    "purple": "#e896ff",
-    "pink":   "#f2c2ff",
-    "gray":   "#303030"
+    "red":      "#e82577",
+    "orange":   "#f08d49",
+    "green":    "#7ec699",
+    "lime":     "#9cff75",
+    "blue":     "#0033ff",
+    "bblue":    "#7ed3f7",
+    "dyellow":  "#f8c555",
+    "yellow":   "#ffffbd",
+    "purple":   "#cc99cd",
+    "pink":     "#f2c2ff",
+    "gray":     "#303030",
+    "white":    "#ffffff"
   },
   "globals": {
     "foreground": "#F8F8F2",
@@ -31,6 +33,81 @@
     "tags_options": "stippled_underline"
   },
   "rules": [
+    {
+      "scope": "col_F8C555FF",
+      "foreground": "#474747FF",
+      "background": "#F8C555FF"
+    },
+    {
+      "scope": "col_F08D49FF",
+      "foreground": "#222222FF",
+      "background": "#F08D49FF"
+    },
+    {
+      "scope": "col_CC99CDFF",
+      "foreground": "#2E2E2EFF",
+      "background": "#CC99CDFF"
+    },
+    {
+      "scope": "col_7EC699FF",
+      "foreground": "#2B2B2BFF",
+      "background": "#7EC699FF"
+    },
+    {
+      "scope": "col_A4C753FF",
+      "foreground": "#2F2F2FFF",
+      "background": "#A4C753FF"
+    },
+    {
+      "scope": "col_52D552FF",
+      "foreground": "#1E1E1EFF",
+      "background": "#52D552FF"
+    },
+    {
+      "scope": "col_2DB92DFF",
+      "foreground": "#FFFFFFFF",
+      "background": "#2DB92DFF"
+    },
+    {
+      "scope": "col_FF8C00FF",
+      "background": "#FF8C00FF",
+      "foreground": "#1E1E1EFF"
+    },
+    {
+      "scope": "col_32CD32FF",
+      "background": "#32CD32FF",
+      "foreground": "#0C0C0CFF"
+    },
+    {
+      "scope": "col_FADA5EFF",
+      "background": "#FADA5EFF",
+      "foreground": "#555555FF"
+    },
+    {
+      "scope": "col_FFAADDAA",
+      "background": "#FFAADDAA",
+      "foreground": "#0B0B0BFF"
+    },
+    {
+      "scope": "col_FFAADDFF",
+      "background": "#FFAADDFF",
+      "foreground": "#494949FF"
+    },
+    {
+      "scope": "col_CCCC00FF",
+      "background": "#CCCC00FF",
+      "foreground": "#343434FF"
+    },
+    {
+      "scope": "col_999900FF",
+      "background": "#999900FF",
+      "foreground": "#070707FF"
+    },
+    {
+      "scope": "col_666600FF",
+      "background": "#666600FF",
+      "foreground": "#DADADAFF"
+    },
     {
       "background": "#7ED3F7FF",
       "scope": "col_7ED3F7FF",
@@ -3003,23 +3080,27 @@
       "foreground": "#F9F9F9FF",
       "background": "#797979FF"
     },
-    {"name":"red",    "scope": "red",      "foreground":" var(red)"                           },
-    {"name":"red",    "scope": "i.red",    "foreground":" var(red)",    "font_style":"italic" },
-    {"name":"orange", "scope": "orange",   "foreground":" var(orange)"                        },
-    {"name":"orange", "scope": "i.orange", "foreground":" var(orange)", "font_style":"italic" },
-    {"name":"green",  "scope": "green",    "foreground":" var(green)"                         },
-    {"name":"green",  "scope": "i.green",  "foreground":" var(green)",  "font_style":"italic" },
-    {"name":"lime",   "scope": "lime",     "foreground":" var(lime)"                          },
-    {"name":"lime",   "scope": "i.lime",   "foreground":" var(lime)",   "font_style":"italic" },
-    {"name":"blue",   "scope": "blue",     "foreground":" var(blue)"                          },
-    {"name":"blue",   "scope": "i.blue",   "foreground":" var(blue)",   "font_style":"italic" },
-    {"name":"bblue",  "scope": "bblue",    "foreground":" var(bblue)"                          },
-    {"name":"bblue",  "scope": "i.bblue",  "foreground":" var(bblue)",  "font_style":"italic" },
-    {"name":"yellow", "scope": "yellow",   "foreground":" var(yellow)"                        },
-    {"name":"yellow", "scope": "i.yellow", "foreground":" var(yellow)", "font_style":"italic" },
-    {"name":"purple", "scope": "purple",   "foreground":" var(purple)"                        },
-    {"name":"purple", "scope": "i.purple", "foreground":" var(purple)", "font_style":"italic" },
-    {"name":"pink",   "scope": "pink",     "foreground":" var(pink)"                          },
-    {"name":"pink",   "scope": "i.pink",   "foreground":" var(pink)",   "font_style":"italic" }
+    {"name":"red","scope":"red","foreground":"var(red)"},
+    {"name":"red","scope":"i.red","foreground":"var(red)","font_style":"italic"},
+    {"name":"orange","scope":"orange","foreground":"var(orange)"},
+    {"name":"orange","scope":"i.orange","foreground":"var(orange)","font_style":"italic"},
+    {"name":"green","scope":"green","foreground":"var(green)"},
+    {"name":"green","scope":"i.green","foreground":"var(green)","font_style":"italic"},
+    {"name":"lime","scope":"lime","foreground":"var(lime)"},
+    {"name":"lime","scope":"i.lime","foreground":"var(lime)","font_style":"italic"},
+    {"name":"blue","scope":"blue","foreground":"var(blue)"},
+    {"name":"blue","scope":"i.blue","foreground":"var(blue)","font_style":"italic"},
+    {"name":"bblue","scope":"bblue","foreground":"var(bblue)"},
+    {"name":"bblue","scope":"i.bblue","foreground":"var(bblue)","font_style":"italic"},
+    {"name":"yellow","scope":"yellow","foreground":"var(yellow)"},
+    {"name":"yellow","scope":"i.yellow","foreground":"var(yellow)","font_style":"italic"},
+    {"name":"dyellow","scope":"dyellow","foreground":"var(dyellow)"},
+    {"name":"dyellow","scope":"i.dyellow","foreground":"var(dyellow)","font_style":"italic"},
+    {"name":"purple","scope":"purple","foreground":"var(purple)"},
+    {"name":"purple","scope":"i.purple","foreground":"var(purple)","font_style":"italic"},
+    {"name":"pink","scope":"pink","foreground":"var(pink)"},
+    {"name":"pink","scope":"i.pink","foreground":"var(pink)","font_style":"italic"},
+    {"name":"white","scope":"white","foreground":"var(white)"},
+    {"name":"white","scope":"i.white","foreground":"var(white)","font_style":"italic"}
   ]
 }

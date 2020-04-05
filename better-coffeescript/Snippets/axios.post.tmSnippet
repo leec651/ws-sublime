@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>content</key>
+  <string>try
+  {data} = await axios.post ${1:url}, ${2:body}
+  ${3:console.log data}
+catch error
+  console.error error
+  {status, data} = error.response</string>
+  <key>name</key>
+  <string>axios.post</string>
+  <key>scope</key>
+  <string>source.coffee</string>
+  <key>tabTrigger</key>
+  <string>post</string>
+</dict>
+</plist>
