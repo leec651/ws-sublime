@@ -566,7 +566,7 @@ contexts:
       comment: key words
       scope: bred
     - match: |-
-        (?!http|https)[\w\ \-\.]*[\w%]+(: )
+        (?!http|https)[\w\ \-\.\+]*[\w%]+(: )
       comment: |-
         definition & header:
         1. ignore http and https

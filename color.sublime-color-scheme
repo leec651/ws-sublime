@@ -20,6 +20,21 @@
   },
   "rules": [
     {
+      "scope": "col_2C3E50FF",
+      "background": "#2C3E50FF",
+      "foreground": "#BABABAFF"
+    },
+    {
+      "scope": "col_EE82EEFF",
+      "background": "#EE82EEFF",
+      "foreground": "#2E2E2EFF"
+    },
+    {
+      "scope": "col_0000FFFF",
+      "background": "#0000FFFF",
+      "foreground": "#9D9D9DFF"
+    },
+    {
       "scope": "col_8A5C8DFF",
       "background": "#8A5C8DFF",
       "foreground": "#EFEFEFFF"
