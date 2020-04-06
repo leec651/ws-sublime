@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>\$scopedSlots</string>
+  <string>\$root</string>
   <key>name</key>
-  <string>Vue.$scopedSlots</string>
+  <string>Vue.root</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
-  <string>v$scopedSlots</string>
+  <string>v-root</string>
 </dict>
 </plist>

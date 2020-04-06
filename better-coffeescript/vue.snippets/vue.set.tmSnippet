@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>\$off</string>
+  <string>\$set this.${2:object}, ${3:index}, ${4:content}</string>
   <key>name</key>
-  <string>Vue.$off</string>
+  <string>Vue.set</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
-  <string>v$off</string>
+  <string>v-set</string>
 </dict>
 </plist>

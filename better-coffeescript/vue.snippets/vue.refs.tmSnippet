@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>\$forceUpdate</string>
+  <string>\$refs</string>
   <key>name</key>
-  <string>Vue.$forceUpdate</string>
+  <string>Vue.refs</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
-  <string>v$forceUpdate</string>
+  <string>v-refs</string>
 </dict>
 </plist>

@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>\$destroy</string>
+  <string>\$once</string>
   <key>name</key>
-  <string>Vue.$destroy</string>
+  <string>Vue.once</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
-  <string>v$destroy</string>
+  <string>v-once</string>
 </dict>
 </plist>

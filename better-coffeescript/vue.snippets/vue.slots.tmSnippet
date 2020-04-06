@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>\$nextTick</string>
+  <string>\$slots</string>
   <key>name</key>
-  <string>Vue.$nextTick</string>
+  <string>Vue.slots</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
-  <string>v$nextTick</string>
+  <string>v-slots</string>
 </dict>
 </plist>

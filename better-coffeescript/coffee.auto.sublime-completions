@@ -92,115 +92,123 @@
       "contents": "console.timeEnd '${1:name}'"
     },
     {
-      "trigger": "fs.exists",
+      "trigger": "fs-exists",
       "contents": "fs.exists ${1:name}, ->$0"
     },
     {
-      "trigger": "fs.existsSync",
+      "trigger": "fs-existsSync",
       "contents": "fs.existsSync(${1:name})$0"
     },
     {
-      "trigger": "fs.readFile",
+      "trigger": "fs-unlink",
+      "contents": "fs.unlink ${1:name}, ->$0"
+    },
+    {
+      "trigger": "fs-unlinkSync",
+      "contents": "fs.unlinkSync ${1:name}"
+    },
+    {
+      "trigger": "fs-readFile",
       "contents": "fs.readFile ${1:name}, '${2:utf8}', ->$0"
     },
     {
-      "trigger": "fs.readFileSync",
+      "trigger": "fs-readFileSync",
       "contents": "fs.readFileSync(${1:name}, '${2:utf8}')$0"
     },
     {
-      "trigger": "fs.close",
+      "trigger": "fs-close",
       "contents": "fs.close(${1:fd}, ${2:callback})$0"
     },
     {
-      "trigger": "fs.closeSync",
+      "trigger": "fs-closeSync",
       "contents": "fs.closeSync(${1:fd})$0"
     },
     {
-      "trigger": "fs.rename",
+      "trigger": "fs-rename",
       "contents": "fs.rename(${1:oldPath}, ${2:newPath}, ${3:callback})$0"
     },
     {
-      "trigger": "fs.renameSync",
+      "trigger": "fs-renameSync",
       "contents": "fs.renameSync(${1:oldPath}, ${2:newPath})$0"
     },
     {
-      "trigger": "fs.rmdir",
+      "trigger": "fs-rmdir",
       "contents": "fs.rmdir(${1:name}, ${2:callback})$0"
     },
     {
-      "trigger": "fs.rmdirSync",
+      "trigger": "fs-rmdirSync",
       "contents": "fs.rmdirSync(${1:name})$0"
     },
     {
-      "trigger": "fs.mkdir",
+      "trigger": "fs-mkdir",
       "contents": "fs.mkdir(${1:name}, ${2:mode}, ${3:callback})$0"
     },
     {
-      "trigger": "fs.mkdirSync",
+      "trigger": "fs-mkdirSync",
       "contents": "fs.mkdirSync(${1:name}, ${2:mode})$0"
     },
     {
-      "trigger": "fs.readdir",
+      "trigger": "fs-readdir",
       "contents": "fs.readdir(${1:name}, ${2:options}, ${3:callback})$0"
     },
     {
-      "trigger": "fs.readdirSync",
+      "trigger": "fs-readdirSync",
       "contents": "fs.readdirSync(${1:name}, ${2:options})$0"
     },
     {
-      "trigger": "fs.stat",
+      "trigger": "fs-stat",
       "contents": "fs.stat ${1:name}, ${2:callback}"
     },
     {
-      "trigger": "fs.statSync",
+      "trigger": "fs-statSync",
       "contents": "fs.statSync(${1:name})$0"
     },
     {
-      "trigger": "fs.chmod",
+      "trigger": "fs-chmod",
       "contents": "fs.chmod(${1:name}, ${2:mode}, ${3:callback})$0"
     },
     {
-      "trigger": "fs.chmodSync",
+      "trigger": "fs-chmodSync",
       "contents": "fs.chmodSync(${1:name}, ${2:mode})$0"
     },
     {
-      "trigger": "fs.writeFile",
+      "trigger": "fs-writeFile",
       "contents": "fs.writeFile(${1:name}, ${2:data}, ${3:options}, ${4:callback})$0"
     },
     {
-      "trigger": "fs.writeFileSync",
+      "trigger": "fs-writeFileSync",
       "contents": "fs.writeFileSync(${1:name}, ${2:data}, ${3:options})$0"
     },
     {
-      "trigger": "fs.appendFile",
+      "trigger": "fs-appendFile",
       "contents": "fs.appendFile(${1:name}, ${2:data}, ${3:options}, ${4:callback})$0"
     },
     {
-      "trigger": "fs.appendFileSync",
+      "trigger": "fs-appendFileSync",
       "contents": "fs.appendFileSync(${1:name}, ${2:data}, ${3:options})$0"
     },
     {
-      "trigger": "fs.watch",
+      "trigger": "fs-watch",
       "contents": "fs.watch(${1:filename}, ${2:options}, ${3:listener})$0"
     },
     {
-      "trigger": "fs.watchFile",
+      "trigger": "fs-watchFile",
       "contents": "fs.watchFile(${1:filename}, ${2:options}, ${3:listener})$0"
     },
     {
-      "trigger": "fs.copyFile",
+      "trigger": "fs-copyFile",
       "contents": "fs.copyFile(${1:src}, ${2:dest}, ${3:flags}, ${4:callback})$0"
     },
     {
-      "trigger": "fs.copyFileSync",
+      "trigger": "fs-copyFileSync",
       "contents": "fs.copyFileSync(${1:src}, ${2:dest}, ${3:flags})$0"
     },
     {
-      "trigger": "fs.createReadStream",
+      "trigger": "fs-createReadStream",
       "contents": "fs.createReadStream(${1:name}, ${2:options})$0"
     },
     {
-      "trigger": "fs.createWriteStream",
+      "trigger": "fs-createWriteStream",
       "contents": "fs.createWriteStream(${1:name}, ${2:options})$0"
     },
     {

@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>\$el</string>
+  <string>\$attrs</string>
   <key>name</key>
-  <string>Vue.$el</string>
+  <string>Vue.attrs</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
-  <string>v$el</string>
+  <string>v-attrs</string>
 </dict>
 </plist>

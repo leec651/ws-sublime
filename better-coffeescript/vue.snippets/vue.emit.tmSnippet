@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>\$props</string>
+  <string>\$emit '${1:name}', ${2:content}</string>
   <key>name</key>
-  <string>Vue.$props</string>
+  <string>Vue.emit</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
-  <string>v$props</string>
+  <string>v-emit</string>
 </dict>
 </plist>

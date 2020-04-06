@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>\$on</string>
+  <string>\$router.push({name: ${1:name}}).catch(->)</string>
   <key>name</key>
-  <string>Vue.$on</string>
+  <string>Vue.router</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
-  <string>v$on</string>
+  <string>v-router</string>
 </dict>
 </plist>

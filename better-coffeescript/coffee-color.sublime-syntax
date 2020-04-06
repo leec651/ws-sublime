@@ -32,7 +32,7 @@ contexts:
       comment: common clasee
       scope: bblue
     - match: |-
-        (commit|\$router|\$data|\$props|\$el|\$options|\$parent|\$root|\$children|\$slots|\$scopedSlots|\$refs|\$isServer|\$attrs|\$listeners|\$watch|\$set|\$delete|\$on|\$once|\$off|\$emit|\$mount|\$forceUpdate|\$nextTick|\$destroy|\$store|\$route)
+        (commit|\$router|\$data|\$props|\$el|\$options|\$parent|\$root|\$children|\$slots|\$scopedSlots|\$refs|\$isServer|\$attrs|\$listeners|\$watch|\$set|\$delete|\$once|\$on|\$off|\$emit|\$mount|\$forceUpdate|\$nextTick|\$destroy|\$store|\$route)
       comment: common vue operators
       scope: forest
     - match: (import|from|require)
