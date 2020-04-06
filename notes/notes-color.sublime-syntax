@@ -556,9 +556,16 @@ contexts:
     #############################################
     #              non-lang nonlang             #
     #############################################
+    - match: |-
+        (https?|ftp):\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*)
+      comment: url
+      scope: lime
     - match: '^\s*(:: |- |\. |\+)'
       comment: unordered list
       scope: lime
+    - match: ^[ \t]*[0-9a-z]+(\. )
+      comment: ordered list
+      scope: bred
     - match: '^\s*(x |v )[\w\ \-\.\:\/\@\|]+'
       comment: completed list
       scope: comment
@@ -575,20 +582,15 @@ contexts:
         4. end with a single space
       scope: bred
     - match: |-
-        \b(https?|ftp)://[^\s/$.?#].[^\s]*\b
-      comment: url
-      scope: lime
+        ^[\w\ \-\.\+]*[\w%]+(:)$
+      comment: definition by itself
+      scope: bred
     - match: (?<!\:)(\/\/.*)
       comment: Comments
       scope: comment
     - match: '^(\-[\-\=]{2}.*)'
       comment: Line breaks
       scope: support.function.notes
-    - match: '^([ \t]*[0-9a-z]+[\:\.\)]\)?\s(\w+\:)?)'
-      comment: Ordered bullets
-      scope: bred
-      captures:
-        2: white
     - match: '(\*+[a-zA-Z \t]+\*+)'
       comment: Emphasis
       scope: keyword.other.notes
@@ -603,6 +605,9 @@ contexts:
       scope: nothing.notes
       captures:
         1: bblue
+    #############################################
+    #                  string                   #
+    #############################################
     - match: '(\`[^\`]*\`)'
       comment: Single Quotes, as back tics
       scope: string

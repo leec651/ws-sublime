@@ -41,9 +41,9 @@ contexts:
       scope: bred
     - match: (await|module.exports|exports|export default|export)
       scope: i.bred
-    - match: \b[A-Z0-9]+[_]*[A-Z0-9]+\b
+    - match: \b[A-Z0-9_]+[A-Z0-9]+\b
       comment: constant
-      scope: b.dblue
+      scope: forest
     - match: (\([^()]*?\))\s*([=-]>)
       comment: "function ie. ->"
       scope: bblue
