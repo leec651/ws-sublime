@@ -559,7 +559,7 @@ contexts:
     - match: '^\s*(:: |- |\. |\+)'
       comment: unordered list
       scope: lime
-    - match: '^\s*(x |v )[\w\ \-\.\:\/\@]+'
+    - match: '^\s*(x |v )[\w\ \-\.\:\/\@\|]+'
       comment: completed list
       scope: comment
     - match: '[^\w](ie\.|ex\.|fyi|wrt|re)\s+'
