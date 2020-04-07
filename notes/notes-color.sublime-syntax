@@ -557,7 +557,7 @@ contexts:
     #            non-lang & nonlang             #
     #############################################
     - match: |-
-        \b(https?|ftp):\/\/[\w\.\/\-#]+\b
+        \b(https?|ftp):\/\/[\w\.\/\-#:]+\b
       comment: url
       scope: lime
     - match: '^\s*(:: |- |\. |\+)'
