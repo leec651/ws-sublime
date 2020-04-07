@@ -1,6 +1,6 @@
 fs   = require 'fs'
 path = require 'path'
-data = require './color-constant.coffee'
+data = require './color-constant'
 
 colors =
   red:      "#ff0000"

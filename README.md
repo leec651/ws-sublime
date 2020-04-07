@@ -1,3 +1,11 @@
+## Update color scheme
+* `color.coffee`: Add addition color scope.
+* `color-constant.coffee`: Update globals colors. See [definition](https://www.sublimetext.com/docs/3/color_schemes.html#global_settings).
+* Regenerate color scheme:
+```
+coffee ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ws-sublime/color.coffee
+```
+
 ## Other useful plug-ins
 * `Alignment`
 * `AutoFileName`
