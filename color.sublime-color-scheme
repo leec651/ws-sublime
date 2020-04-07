@@ -262,260 +262,230 @@
       "foreground": "#AE81FF"
     },
     {
-      "name": "red",
       "scope": "red",
       "foreground": "#ff0000"
     },
     {
-      "name": "red",
       "scope": "b.red",
-      "background": "#ff0000"
+      "background": "#ff0000cc"
     },
     {
-      "name": "red",
       "scope": "i.red",
       "foreground": "#ff0000",
       "font_style": "italic"
     },
     {
-      "name": "bred",
       "scope": "bred",
       "foreground": "#e82577"
     },
     {
-      "name": "bred",
       "scope": "b.bred",
-      "background": "#e82577"
+      "background": "#e82577cc"
     },
     {
-      "name": "bred",
       "scope": "i.bred",
       "foreground": "#e82577",
       "font_style": "italic"
     },
     {
-      "name": "orange",
       "scope": "orange",
       "foreground": "#f08d49"
     },
     {
-      "name": "orange",
       "scope": "b.orange",
-      "background": "#f08d49"
+      "background": "#f08d49cc"
     },
     {
-      "name": "orange",
       "scope": "i.orange",
       "foreground": "#f08d49",
       "font_style": "italic"
     },
     {
-      "name": "dgreen",
       "scope": "dgreen",
       "foreground": "#004d00"
     },
     {
-      "name": "dgreen",
       "scope": "b.dgreen",
-      "background": "#004d00"
+      "background": "#004d00cc"
     },
     {
-      "name": "dgreen",
       "scope": "i.dgreen",
       "foreground": "#004d00",
       "font_style": "italic"
     },
     {
-      "name": "forest",
       "scope": "forest",
-      "foreground": "#228B22"
+      "foreground": "#228b22"
     },
     {
-      "name": "forest",
       "scope": "b.forest",
-      "background": "#228B22"
+      "background": "#228b22cc"
     },
     {
-      "name": "forest",
       "scope": "i.forest",
-      "foreground": "#228B22",
+      "foreground": "#228b22",
       "font_style": "italic"
     },
     {
-      "name": "green",
       "scope": "green",
       "foreground": "#7ec699"
     },
     {
-      "name": "green",
       "scope": "b.green",
-      "background": "#7ec699"
+      "background": "#7ec699cc"
     },
     {
-      "name": "green",
       "scope": "i.green",
       "foreground": "#7ec699",
       "font_style": "italic"
     },
     {
-      "name": "lime",
       "scope": "lime",
       "foreground": "#bfff00"
     },
     {
-      "name": "lime",
       "scope": "b.lime",
-      "background": "#bfff00"
+      "background": "#bfff00cc"
     },
     {
-      "name": "lime",
       "scope": "i.lime",
       "foreground": "#bfff00",
       "font_style": "italic"
     },
     {
-      "name": "dblue",
       "scope": "dblue",
-      "foreground": "#000080"
+      "foreground": "#041652"
     },
     {
-      "name": "dblue",
       "scope": "b.dblue",
-      "background": "#000080"
+      "background": "#041652cc"
     },
     {
-      "name": "dblue",
       "scope": "i.dblue",
-      "foreground": "#000080",
+      "foreground": "#041652",
       "font_style": "italic"
     },
     {
-      "name": "blue",
       "scope": "blue",
       "foreground": "#0033ff"
     },
     {
-      "name": "blue",
       "scope": "b.blue",
-      "background": "#0033ff"
+      "background": "#0033ffcc"
     },
     {
-      "name": "blue",
       "scope": "i.blue",
       "foreground": "#0033ff",
       "font_style": "italic"
     },
     {
-      "name": "bblue",
+      "scope": "blue2",
+      "foreground": "#4398f0"
+    },
+    {
+      "scope": "b.blue2",
+      "background": "#4398f0cc"
+    },
+    {
+      "scope": "i.blue2",
+      "foreground": "#4398f0",
+      "font_style": "italic"
+    },
+    {
       "scope": "bblue",
       "foreground": "#7ed3f7"
     },
     {
-      "name": "bblue",
       "scope": "b.bblue",
-      "background": "#7ed3f7"
+      "background": "#7ed3f7cc"
     },
     {
-      "name": "bblue",
       "scope": "i.bblue",
       "foreground": "#7ed3f7",
       "font_style": "italic"
     },
     {
-      "name": "dyellow",
       "scope": "dyellow",
       "foreground": "#f8c555"
     },
     {
-      "name": "dyellow",
       "scope": "b.dyellow",
-      "background": "#f8c555"
+      "background": "#f8c555cc"
     },
     {
-      "name": "dyellow",
       "scope": "i.dyellow",
       "foreground": "#f8c555",
       "font_style": "italic"
     },
     {
-      "name": "yellow",
       "scope": "yellow",
       "foreground": "#ffffbd"
     },
     {
-      "name": "yellow",
       "scope": "b.yellow",
-      "background": "#ffffbd"
+      "background": "#ffffbdcc"
     },
     {
-      "name": "yellow",
       "scope": "i.yellow",
       "foreground": "#ffffbd",
       "font_style": "italic"
     },
     {
-      "name": "purple",
       "scope": "purple",
       "foreground": "#a167c9"
     },
     {
-      "name": "purple",
       "scope": "b.purple",
-      "background": "#a167c9"
+      "background": "#a167c9cc"
     },
     {
-      "name": "purple",
       "scope": "i.purple",
       "foreground": "#a167c9",
       "font_style": "italic"
     },
     {
-      "name": "pink",
       "scope": "pink",
       "foreground": "#f2c2ff"
     },
     {
-      "name": "pink",
       "scope": "b.pink",
-      "background": "#f2c2ff"
+      "background": "#f2c2ffcc"
     },
     {
-      "name": "pink",
       "scope": "i.pink",
       "foreground": "#f2c2ff",
       "font_style": "italic"
     },
     {
-      "name": "gray",
       "scope": "gray",
       "foreground": "#202020"
     },
     {
-      "name": "gray",
       "scope": "b.gray",
-      "background": "#202020"
+      "background": "#202020cc"
     },
     {
-      "name": "gray",
       "scope": "i.gray",
       "foreground": "#202020",
       "font_style": "italic"
     },
     {
-      "name": "white",
       "scope": "white",
       "foreground": "#ffffff"
     },
     {
-      "name": "white",
       "scope": "b.white",
-      "background": "#ffffff"
+      "background": "#ffffffcc"
     },
     {
-      "name": "white",
       "scope": "i.white",
       "foreground": "#ffffff",
       "font_style": "italic"
+    },
+    {
+      "scope": "constant",
+      "background": "#041652cc",
+      "foreground": "#4398f0"
     }
   ]
 }
