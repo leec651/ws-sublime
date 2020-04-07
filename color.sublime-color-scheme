@@ -20,6 +20,96 @@
   },
   "rules": [
     {
+      "scope": "col_gutter",
+      "foreground": "#ffffff",
+      "background": "#000000"
+    },
+    {
+      "scope": "col_202020FF",
+      "foreground": "#A0A0A0FF",
+      "background": "#202020FF"
+    },
+    {
+      "scope": "col_7EC699FF",
+      "foreground": "#2B2B2BFF",
+      "background": "#7EC699FF"
+    },
+    {
+      "scope": "col_FF0000FF",
+      "foreground": "#CCCCCCFF",
+      "background": "#FF0000FF"
+    },
+    {
+      "scope": "col_A167C9FF",
+      "foreground": "#030303FF",
+      "background": "#A167C9FF"
+    },
+    {
+      "scope": "col_0033FFFF",
+      "foreground": "#BBBBBBFF",
+      "background": "#0033FFFF"
+    },
+    {
+      "scope": "col_FFFFFFFF",
+      "foreground": "#7F7F7FFF",
+      "background": "#FFFFFFFF"
+    },
+    {
+      "scope": "col_F8C555FF",
+      "foreground": "#474747FF",
+      "background": "#F8C555FF"
+    },
+    {
+      "scope": "col_F2C2FFFF",
+      "foreground": "#575757FF",
+      "background": "#F2C2FFFF"
+    },
+    {
+      "scope": "col_4398F0FF",
+      "foreground": "#080808FF",
+      "background": "#4398F0FF"
+    },
+    {
+      "scope": "col_041652FF",
+      "foreground": "#979797FF",
+      "background": "#041652FF"
+    },
+    {
+      "scope": "col_7ED3F7FF",
+      "foreground": "#3D3D3DFF",
+      "background": "#7ED3F7FF"
+    },
+    {
+      "scope": "col_E82577FF",
+      "foreground": "#E8E8E8FF",
+      "background": "#E82577FF"
+    },
+    {
+      "scope": "col_F08D49FF",
+      "foreground": "#222222FF",
+      "background": "#F08D49FF"
+    },
+    {
+      "scope": "col_228B22FF",
+      "foreground": "#DFDFDFFF",
+      "background": "#228B22FF"
+    },
+    {
+      "scope": "col_004D00FF",
+      "foreground": "#ADADADFF",
+      "background": "#004D00FF"
+    },
+    {
+      "scope": "col_FFFFBDFF",
+      "foreground": "#777777FF",
+      "background": "#FFFFBDFF"
+    },
+    {
+      "scope": "col_BFFF00FF",
+      "foreground": "#4E4E4EFF",
+      "background": "#BFFF00FF"
+    },
+    {
       "name": "Attribute",
       "scope": "entity.other.attribute-name",
       "foreground": "#A6E22E"

@@ -600,7 +600,7 @@ contexts:
     - match: '(\<[^\>]*\>)'
       comment: Important, surrounded by <...>
       scope: purple
-    - match: '^(\#+[^\#]*\#*)'
+    - match: '^\s*(\#+[^\#]*\#*)'
       comment: Highlights
       scope: nothing.notes
       captures:
