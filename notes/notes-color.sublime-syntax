@@ -554,10 +554,10 @@ contexts:
         - include: scope:source.yaml
 
     #############################################
-    #              non-lang nonlang             #
+    #            non-lang & nonlang             #
     #############################################
     - match: |-
-        (https?|ftp):\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*)
+        \b(https?|ftp):\/\/[\w\.\/\-]+\b
       comment: url
       scope: lime
     - match: '^\s*(:: |- |\. |\+)'

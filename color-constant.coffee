@@ -1,4 +1,4 @@
-module.exports = {
+module.exports =
   name:  "color"
   author: "chen"
   globals:
@@ -214,4 +214,3 @@ module.exports = {
     scope:"constant.character, constant.other"
     foreground:"#AE81FF"
   ]
-}
