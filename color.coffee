@@ -22,7 +22,7 @@ colors =
   white:    "#ffffff"
 
 specials =
-  constant:
+  myConstant:
     background: colors.dblue
     foreground: colors.blue2
 

@@ -483,7 +483,7 @@
       "font_style": "italic"
     },
     {
-      "scope": "constant",
+      "scope": "myConstant",
       "background": "#041652cc",
       "foreground": "#4398f0"
     }
