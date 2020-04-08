@@ -558,7 +558,11 @@ contexts:
     # definitions and comments
     - match: |-
         ^( )*(\-|\.|\+)( )[\w\.\-@%$&\s]{1,40}:
-      comment: definition
+      comment: definition list
+      scope: bred
+    - match: |-
+        ^[\w\.\-@%$&\s]{1,40}::
+      comment: stand alone definition
       scope: bred
     - match: (?<!\:)(\/\/.*)
       comment: Comments
@@ -609,9 +613,15 @@ contexts:
     - match: '(\"[^\"]*\")'
       comment: string " "
       scope: dyellow
-    - match: (\(|\{)(.*)(\)|\})
+    - match: (\()(.*)(\))
       comment: string ( )
       captures:
         1: red
-        2: dyellow
+        2: pink
+        3: red
+    - match: (\{)(.*)(\})
+      comment: string { }
+      captures:
+        1: red
+        2: lime
         3: red
