@@ -574,9 +574,7 @@ contexts:
     - match: '(?![a-zA-Z])\!+[^\!\n\r]+\!*'
       comment: warning/critical
       scope: important
-    - match: '([\{\(\)\}])'
-      comment: Emphasis on parentheses
-      scope: keyword.operator
+    - match: '^\s*(\#+[^\#]*\#*)'
 
     # ordered, unordered, completed list
     - match: ^( )*(::|\-|\.|\+)\s
@@ -598,16 +596,22 @@ contexts:
       comment: special key words
       scope: bred
 
-    # emphasis
+    # strings emphasis
     - match: '(\*+[a-zA-Z \t]+\*+)'
-      comment: emphasis * *
-      scope: purple
+      comment: string * *
+      scope: dyellow
     - match: '(\<[^\>]*\>)'
-      comment: emphasis < >
-      scope: purple
+      comment: string < >
+      scope: dyellow
     - match: '(\`[^\`]*\`)'
-      comment: back tics single quotes
-      scope: purple
+      comment: string back tics
+      scope: dyellow
     - match: '(\"[^\"]*\")'
-      comment: double quotes
-      scope: purple
+      comment: string " "
+      scope: dyellow
+    - match: (\(|\{)(.*)(\)|\})
+      comment: string ( )
+      captures:
+        1: red
+        2: dyellow
+        3: red
