@@ -1,0 +1,554 @@
+%YAML 1.2
+---
+name: Notes
+file_extensions:
+  - notes
+scope: source.notes
+contexts:
+  main:
+    - match: '(\[)(actionscript|as)(\])'
+      comment: Actionscript
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|actionscript|as))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.actionscript.2
+    - match: '(\[)(applescript)(\])'
+      comment: Applescript
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|applescript))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.applescript
+    - match: '(\[)(asp|asa)(\])'
+      comment: ASP
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|asp|asa))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.asp
+    - match: '(\[)(c)(\])'
+      comment: C
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|c))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.c
+    - match: '(\[)(cs|c#|csharp)(\])'
+      comment: "C#"
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|cs|c#|csharp))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.cs
+    - match: '(\[)(c\+\+|cpp|cc|cxx)(\])'
+      comment: C++
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|c\+\+|cpp|cc|cxx))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.c++
+    - match: '(\[)(clj|clojure)(\])'
+      comment: Clojure
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|clj|clojure))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.clojure
+    - match: '(\[)(css)(\])'
+      comment: CSS
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|css))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.css
+    - match: '(\[)(di)(\])'
+      comment: D
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|di))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.d
+    - match: '(\[)(erl|hrl|Emakefile|emakefile|)(\])'
+      comment: Erlang
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|erl|hrl|Emakefile|emakefile|))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.erlang
+    - match: '(\[)(go|golang)(\])'
+      comment: Go
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|go|golang))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.go
+    - match: '(\[)(groovy|gvy)(\])'
+      comment: Groovy
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|groovy|gvy))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.groovy
+    - match: '(\[)(hs|haskell)(\])'
+      comment: Haskell
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|hs|haskell))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.haskell
+    - match: '(\[)(html|htm|shtml|xhtml|phtml|inc|tmpl|tpl|ctp)(\])'
+      comment: HTML
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|html|htm|shtml|xhtml|phtml|inc|tmpl|tpl|ctp))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:text.html.basic
+    - match: '(\[)(java|bsh)(\])'
+      comment: Java
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|java|bsh))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.java
+    - match: ^(cc|<<)$
+      comment: Coffeescript
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: ^(cc|>>)$
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.coffee
+    - match: '(\[)(coffee|coffeescript|cc)(\])'
+      comment: Coffeescript
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|coffee|coffeescript|cc))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.coffee
+    - match: '(\[)(js|jsx|htc|javascript)(\])'
+      comment: Javascript
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|js|jsx|htc|javascript))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.js
+    - match: '(\[)(proto)(\])'
+      comment: Javascript
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|proto))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.proto
+    - match: '(\[)(lua)(\])'
+      comment: Lua
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|lua))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.lua
+    - match: '(\[)(gnumakefile|makefile|makefile|ocamlmakefile|make)(\])'
+      comment: Makefile
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|gnumakefile|makefile|makefile|ocamlmakefile|make))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.makefile
+    - match: '(\[)(mdown|markdown|markdn|md)(\])'
+      comment: Markdown
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|mdown|markdown|markdn|md))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:text.html.markdown
+    - match: '(\[)(matlab)(\])'
+      comment: Matlab
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|matlab))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.matlab
+    - match: '(\[)(objective-c|objc|m|h)(\])'
+      comment: Objective-c
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|objective-c|objc|m|h))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.objc
+    - match: '(\[)(ocaml|ml|mli)(\])'
+      comment: Ocaml
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|ocaml|ml|mli))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.ocaml
+    - match: '(\[)(p|pas|pascal)(\])'
+      comment: Pascal
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|p|pas|pascal))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.pascal
+    - match: '(\[)(pm|pl|pod|t|perl)(\])'
+      comment: Perl
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|pm|pl|pod|t|perl))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.perl
+    - match: '(\[)(php)(\])'
+      comment: PHP
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|php))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.php
+    - match: '(\[)(cpy|py|python|rpy|pyw)(\])'
+      comment: Python
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|cpy|py|python|rpy|pyw))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.python
+    - match: '(\[)(r|s|rprofile)(\])'
+      comment: R
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|r|s|rprofile))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.r
+    - match: '(\[)(re|regex|regexp)(\])'
+      comment: Regex
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|re|regex|regexp))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.regexp
+    - match: '(\[)(rb|rbx|rjs|ruby|Rakefile|rake|cgi|fcgi|gemspec|irbrc|capfile|gemfile)(\])'
+      comment: Ruby
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|rb|rbx|rjs|ruby|Rakefile|rake|cgi|fcgi|gemspec|irbrc|capfile|gemfile))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.ruby
+    - match: '(\[)(scala)(\])'
+      comment: Scala
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|scala))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.scala
+    - match: '(\[)(sh|bash|zsh|bashrc)(\])'
+      comment: Shell
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|sh|bash|zsh|bashrc))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.shell
+    - match: '(\[)(sql|dml|ddl|mysql)(\])'
+      comment: SQL
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|sql|dml|ddl|mysql))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.sql
+    - match: '(\[)(tcl)(\])'
+      comment: TCL
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|tcl))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.tcl
+    - match: '(\[)(tex|latex|sty|cls)(\])'
+      comment: TeX
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|tex|latex|sty|cls))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:text.tex
+    - match: '(\[)(xml|tld|jsp|pt|cpt|dtml|rss|opml)(\])'
+      comment: XML
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|xml|tld|jsp|pt|cpt|dtml|rss|opml))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:text.xml
+    - match: '(\[)(yaml|yml)(\])'
+      comment: YAML
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(end|yaml|yml))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.yaml
