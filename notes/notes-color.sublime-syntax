@@ -540,9 +540,45 @@ contexts:
     #       pop: true
     #     - include: scope:source.yaml
 
+
+
+
+
+
+    # special words or symbols
+    - match: |-
+        \b(https?):\/\S+
+      comment: url - 12
+      scope: yellow
+    - match: |-
+        \bie\.
+      comment: special ie. - 83
+      scope: bred
+    - match: |-
+        \bex\.
+      comment: special ex.
+      scope: bred
+    - match: |-
+        -+>
+      comment: special ->
+      scope: bblue
+    - match: |-
+        =+>
+      comment: special =>
+      scope: bblue
+    - match: |-
+        <-+
+      comment: special <-
+      scope: bblue
+    - match: |-
+        <=+
+      comment: special <=
+      scope: bblue
+
+
     # definitions and comments
     - match: |-
-        ^(\s)*(\-|\.|\+)( )[\w\.\-@$& ]{1,25}:
+        ^ *[\-|\.|\+] [\w\.\-@$& ]{1,25}:\s
       comment: definition list
       scope: bred
     - match: |-
@@ -551,55 +587,31 @@ contexts:
       scope: comment
 
     #  headers & breakers
-    - match: '^(\-[\-\=]{2}.*)'
+    - match: ^\-{3}.*
       comment: Line breaks
       scope: bblue
-    - match: '^\s*(\#+[^\#]*\#*)'
+    - match: ^\s*(\#+[^\#]*\#*)
       comment: Highlights
       scope: bblue
-    - match: '(?![a-zA-Z])\!+[^\!\n\r]+\!*'
-      comment: warning/critical
+    - match: (?![a-zA-Z])\!+[^\!\n\r]+\!*
+      comment: warning/critical - 10
       scope: important
 
     # ordered, unordered, completed list
-    - match: ^\s*[xv]( ).+$
+    - match: ^\s*[xv].+$
       comment: completed list
       scope: comment
     - match: ^\s*[::\-\.\+]\s
-      comment: unordered list
+      comment: unordered list  - 10
       scope: bred
     - match: ^\s*[\w]+(\. )
       comment: ordered list
       scope: bred
 
-    # stand alone definition - need to be behind completed list
-    - match: |-
-        ^\s*[\w\.\-@%$& ]{1,25}:
-      comment: stand alone definition
-      scope: bred
-
-    # special words or symbols
-    - match: \b(https?|ftp):\/\/[\w\.\/\-#:=\?@]+
-      comment: url
-      scope: yellow
-    - match: |-
-        \s(ie\.|ex\.|-+>|=+>|<=+|<-+)( )
-      comment: special key words
-      scope: bred
-
     # strings emphasis
-    # - match: '(\*+[a-zA-Z \t]+\*+)'
-    #   comment: string * *
-    #   scope: dyellow
-    # - match: '(\<[^\>]*\>)'
-    #   comment: string < >
-    #   scope: dyellow
-    # - match: '(\`[^\`]*\`)'
-    #   comment: string back tics
-    #   scope: dyellow
-    # - match: '(\"[^\"]*\")'
-    - match: (\")([^\"]*)(\")
-      comment: string " "
+    - match: |-
+        (\")([^\"]*)(\")
+      comment: string " " - 10
       captures:
         1: red
         2: dyellow
@@ -616,5 +628,18 @@ contexts:
       comment: string { }
       captures:
         1: red
-        2: lime
+        2: pink
         3: red
+    - match: |-
+        (\[)([^\]]*)(\])
+      comment: string { }
+      captures:
+        1: red
+        2: pink
+        3: red
+
+    # stand alone definition. stay in the back for perf gain
+    - match: |-
+        ^[^:\/\\]{1,25}:
+      comment: stand alone definition - 50
+      scope: bred
