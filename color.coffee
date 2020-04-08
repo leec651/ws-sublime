@@ -20,11 +20,15 @@ colors =
   pink:     "#f2c2ff"
   gray:     "#202020"
   white:    "#ffffff"
+  black:    "#111111"
 
 specials =
   myConstant:
     background: colors.dblue
     foreground: colors.blue2
+  important:
+    background: colors.lime
+    foreground: colors.black
 
 
 bg = (background) -> "#{background}cc"
@@ -52,6 +56,5 @@ for scope, {background, foreground, font_style} of specials
   data.rules.push {scope, background, foreground, font_style}
 
 
-console.log JSON.stringify(data, null, 2)
 FILE_PATH = path.resolve __dirname, 'color.sublime-color-scheme'
 fs.writeFileSync FILE_PATH, JSON.stringify(data, null, 2)

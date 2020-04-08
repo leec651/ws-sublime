@@ -572,8 +572,8 @@ contexts:
       comment: Highlights
       scope: bblue
     - match: '(?![a-zA-Z])\!+[^\!\n\r]+\!*'
-      comment: Warning/critical
-      scope: b.orange
+      comment: warning/critical
+      scope: important
     - match: '([\{\(\)\}])'
       comment: Emphasis on parentheses
       scope: keyword.operator

@@ -35,7 +35,7 @@ contexts:
         (commit|\$router|\$data|\$props|\$el|\$options|\$parent|\$root|\$children|\$slots|\$scopedSlots|\$refs|\$isServer|\$attrs|\$listeners|\$watch|\$set|\$delete|\$once|\$on|\$off|\$emit|\$mount|\$forceUpdate|\$nextTick|\$destroy|\$store|\$route)
       comment: common vue operators
       scope: forest
-    - match: (import|from|require)
+    - match: \b(import|from|require)\b
       scope: green
     - match: (debugger|\\)
       scope: bred
