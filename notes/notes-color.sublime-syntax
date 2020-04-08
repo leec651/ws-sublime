@@ -557,7 +557,7 @@ contexts:
 
     # definitions and comments
     - match: |-
-        ^( )*(\-|\.|\+)( )[\w\.\-@%$&\s]*:
+        ^( )*(\-|\.|\+)( )[\w\.\-@%$&\s]{1,40}:
       comment: definition
       scope: bred
     - match: (?<!\:)(\/\/.*)
