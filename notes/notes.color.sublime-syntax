@@ -469,20 +469,20 @@ contexts:
     #         4: string.regexp.notes
     #       pop: true
     #     - include: scope:source.shell
-    # - match: '(\[)(sql|dml|ddl|mysql)(\])'
-    #   comment: SQL
-    #   captures:
-    #     1: string.regexp.notes
-    #     2: markup.bold.notes
-    #     3: string.regexp.notes
-    #   push:
-    #     - match: '(\[)(\\?\/?(sql|dml|ddl|mysql))(\])'
-    #       captures:
-    #         1: string.regexp.notes
-    #         3: markup.bold.notes
-    #         4: string.regexp.notes
-    #       pop: true
-    #     - include: scope:source.sql
+    - match: '(\[)(sql)(\])'
+      comment: SQL
+      captures:
+        1: string.regexp.notes
+        2: markup.bold.notes
+        3: string.regexp.notes
+      push:
+        - match: '(\[)(\\?\/?(sql|dml|ddl|mysql))(\])'
+          captures:
+            1: string.regexp.notes
+            3: markup.bold.notes
+            4: string.regexp.notes
+          pop: true
+        - include: scope:source.sql
     # - match: '(\[)(tcl)(\])'
     #   comment: TCL
     #   captures:
@@ -539,11 +539,16 @@ contexts:
     #         4: string.regexp.notes
     #       pop: true
     #     - include: scope:source.yaml
-
-
-
-
-
+    - match: ^`$
+      comment: complete block
+      scope: comment
+      push:
+        - match: '[^`]*'
+          scope: comment
+        - match: ^`$
+          scope: comment
+          pop: true
+        - include: scope:source.css
 
     # special words or symbols
     - match: |-
@@ -628,14 +633,14 @@ contexts:
       comment: string { }
       captures:
         1: red
-        2: pink
+        2: bblue
         3: red
     - match: |-
         (\[)([^\]]*)(\])
-      comment: string { }
+      comment: string [ ]
       captures:
         1: red
-        2: pink
+        2: lime
         3: red
 
     # stand alone definition. stay in the back for perf gain
