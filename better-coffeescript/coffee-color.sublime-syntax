@@ -13,18 +13,32 @@ scope: source.coffee
 contexts:
   main:
     - match: |-
-        \b(moment|express|ApolloServer|gql|dayjs|async|hl|request|axios|fs|readline|Vue|Vuex|_|path)\b
-      comment: common libs
-      scope: white
-    - match: \b[0-9]+\b
-      comment: number
-      scope: purple
+        (\.)(apply|bind|call|isGenerator|toString|concat|copyWithin|entries|every|fill|filter|find|findIndex|flat|flatMap|forEach|includes|indexOf|join|keys|lastIndexOf|map|pop|push|reduce|reduceRight|reverse|shift|slice|some|sort|splice|toLocaleString|toSource|toString|unshift|values)\b
+      comment: express and mocha
+      captures:
+        1: bred
+        2: entity.name.function.coffee
     - match: |-
-        (?x)((?<=\.)(
-          apply|call|concat|every|filter|forEach|from|hasOwnProperty|indexOf|isPrototypeOf|join|lastIndexOf|map|of|pop|propertyIsEnumerable|push|reduce(Right)?|reverse|shift|slice|some|sort|splice|to(Locale)?String|unshift|valueOf|assign|chunk|compact|difference|differenceBy|differenceWith|drop|dropRight|dropRightWhile|dropWhile|fill|findIndex|findLastIndex|first|flatten|flattenDeep|flattenDepth|fromPairs|head|initial|intersection|intersectionBy|intersectionWith|last|nth|pull|pullAll|pullAllBy|pullAllWith|pullAt|remove|sortedIndex|sortedIndexBy|sortedIndexOf|sortedLastIndex|sortedLastIndexBy|sortedLastIndexOf|sortedUniq|sortedUniqBy|tail|take|takeRight|takeRightWhile|takeWhile|union|unionBy|unionWith|uniq|uniqBy|uniqueId|uniqWith|unzip|unzipWith|without|xor|xorBy|xorWith|zip|zipObject|zipObjectDeep|zipWith|countBy|each|eachRight|find|findLast|flatMap|flatMapDeep|flatMapDepth|forEachRight|groupBy|includes|invokeMap|keyBy|orderBy|partition|reduce|reduceRight|reject|sample|sampleSize|shuffle|size|sortBy|now|after|ary|before|bind|bindKey|curry|toPath|curryRight|debounce|defer|delay|flip|memoize|negate|once|overArgs|partial|partialRight|rearg|rest|spread|throttle|unary|wrap|castArray|clone|cloneDeep|cloneDeepWith|cloneWith|conformsTo|eq|gt|gte|isArguments|isArray|isArrayBuffer|isArrayLike|isArrayLikeObject|isBoolean|isBuffer|isDate|isElement|isEmpty|isEqual|isEqualWith|isError|isFinite|isFunction|isInteger|isLength|isMap|isMatch|isMatchWith|isNaN|isNative|isNil|isNull|isNumber|isObject|isObjectLike|isPlainObject|isRegExp|isSafeInteger|isSet|isString|isSymbol|isTypedArray|isUndefined|isWeakMap|isWeakSet|lt|lte|toArray|toFinite|toInteger|toLength|toNumber|toPlainObject|toSafeInteger|toString|add|ceil|divide|floor|max|maxBy|mean|meanBy|min|minBy|multiply|round|subtract|sum|sumBy|clamp|inRange|random|assignIn|assignInWith|assignWith|at|create|defaults|defaultsDeep|entries|entriesIn|extend|extendWith|findKey|findLastKey|forIn|forInRight|forOwn|forOwnRight|functions|functionsIn|get|has|hasIn|invert|invertBy|invoke|keys|keysIn|mapKeys|mapValues|merge|mergeWith|omit|omitBy|pick|pickBy|result|set|setWith|toPairs|toPairsIn|transform|unset|update|updateWith|values|valuesIn|chain|tap|thru|camelCase|capitalize|deburr|endsWith|escape|escapeRegExp|kebabCase|lowerCase|lowerFirst|pad|padEnd|padStart|parseInt|repeat|replace|snakeCase|split|startCase|startsWith|template|toLower|toUpper|trim|trimEnd|trimStart|truncate|unescape|upperCase|upperFirst|words|attempt|bindAll|cond|conforms|constant|defaultTo|flow|flowRight|identity|iteratee|matches|matchesProperty|method|methodOf|mixin|noConflict|noop|nthArg|over|overEvery|overSome|property|propertyOf|range|rangeRight|runInContext|stubArray|stubFalse|stubObject|stubString|stubTrue|times
-        ))\b
+        ^\s*(describe|it|app)(\.)(get|post|put|all|del|delete) ([^,]+)
+      comment: express and mocha
+      captures:
+        1: bblue
+        2: bred
+        3: entity.name.function.coffee
+    - match: |-
+        \b(Object)(\.)(hasOwnProperty|isPrototypeOf|propertyIsEnumerable|toLocaleString|toSource|toString|unwatch|valueOf|watch|assign|create|defineProperties|defineProperty|entries|freeze|fromEntries|getNotifier|getOwnPropertyDescriptor|getOwnPropertyDescriptors|getOwnPropertyNames|getOwnPropertySymbols|getPrototypeOf|is|isExtensible|isFrozen|isSealed|keys|observe|preventExtensions|seal|setPrototypeOf|unobserve|values)\b
+      comment: object
+      captures:
+        1: bblue
+        2: bred
+        3: entity.name.function.coffee
+    - match: |-
+        (_)(\.)(chunk|compact|concat|difference|differenceBy|differenceWith|drop|dropRight|dropRightWhile|dropWhile|fill|findIndex|findLastIndex|first |flatten|flattenDeep|flattenDepth|fromPairs|head|indexOf|initial|intersection|intersectionBy|intersectionWith|join|last|lastIndexOf|nth|pull|pullAll|pullAllBy|pullAllWith|pullAt|remove|reverse|slice|sortedIndex|sortedIndexBy|sortedIndexOf|sortedLastIndex|sortedLastIndexBy|sortedLastIndexOf|sortedUniq|sortedUniqBy|tail|take|takeRight|takeRightWhile|takeWhile|union|unionBy|unionWith|uniq|uniqBy|uniqWith|unzip|unzipWith|without|xor|xorBy|xorWith|zip|zipObject|zipObjectDeep|zipWith|countBy|each |eachRight |every|filter|find|findLast|flatMap|flatMapDeep|flatMapDepth|forEach|forEachRight|groupBy|includes|invokeMap|keyBy|map|orderBy|partition|reduce|reduceRight|reject|sample|sampleSize|shuffle|size|some|sortBy|now|after|ary|before|bind|bindKey|curry|curryRight|debounce|defer|delay|flip|memoize|negate|once|overArgs|partial|partialRight|rearg|rest|spread|throttle|unary|wrap|castArray|clone|cloneDeep|cloneDeepWith|cloneWith|conformsTo|eq|gt|gte|isArguments|isArray|isArrayBuffer|isArrayLike|isArrayLikeObject|isBoolean|isBuffer|isDate|isElement|isEmpty|isEqual|isEqualWith|isError|isFinite|isFunction|isInteger|isLength|isMap|isMatch|isMatchWith|isNaN|isNative|isNil|isNull|isNumber|isObject|isObjectLike|isPlainObject|isRegExp|isSafeInteger|isSet|isString|isSymbol|isTypedArray|isUndefined|isWeakMap|isWeakSet|lt|lte|toArray|toFinite|toInteger|toLength|toNumber|toPlainObject|toSafeInteger|toString|add|ceil|divide|floor|max|maxBy|mean|meanBy|min|minBy|multiply|round|subtract|sum|sumBy|clamp|inRange|random|assign|assignIn|assignInWith|assignWith|at|create|defaults|defaultsDeep|entries |entriesIn |extend |extendWith |findKey|findLastKey|forIn|forInRight|forOwn|forOwnRight|functions|functionsIn|get|has|hasIn|invert|invertBy|invoke|keys|keysIn|mapKeys|mapValues|merge|mergeWith|omit|omitBy|pick|pickBy|result|set|setWith|toPairs|toPairsIn|transform|unset|update|updateWith|values|valuesIn|chain|tap|thru|camelCase|capitalize|deburr|endsWith|escape|escapeRegExp|kebabCase|lowerCase|lowerFirst|pad|padEnd|padStart|parseInt|repeat|replace|snakeCase|split|startCase|startsWith|template|toLower|toUpper|trim|trimEnd|trimStart|truncate|unescape|upperCase|upperFirst|words|attempt|bindAll|cond|conforms|constant|defaultTo|flow|flowRight|identity|iteratee|matches|matchesProperty|method|methodOf|mixin|noConflict|noop|nthArg|over|overEvery|overSome|property|propertyOf|range|rangeRight|runInContext|stubArray|stubFalse|stubObject|stubString|stubTrue|times|toPath|uniqueId)
       comment: common functions
-      scope: bblue
+      captures:
+        1: bblue
+        2: bred
+        3: entity.name.function.coffee
     - match: |-
         (?x)\b(
           Array|ArrayBuffer|Blob|Boolean|Date|document|event|Float(32|64)Array|Function|Int(8|16|32|64)Array|Math|Map|Number|Object|Proxy|RegExp|Set|String|WeakMap|window|Uint(8|16|32|64)Array|XMLHttpRequest|Symbol
@@ -32,19 +46,20 @@ contexts:
       comment: common clasee
       scope: bblue
     - match: |-
-        (commit|\$router|\$data|\$props|\$el|\$options|\$parent|\$root|\$children|\$slots|\$scopedSlots|\$refs|\$isServer|\$attrs|\$listeners|\$watch|\$set|\$delete|\$once|\$on|\$off|\$emit|\$mount|\$forceUpdate|\$nextTick|\$destroy|\$store|\$route)
+        \$(commit|router|data|props|el|options|parent|root|children|slots|scopedSlots|refs|isServer|attrs|listeners|watch|set|delete|once|on|off|emit|mount|forceUpdate|nextTick|destroy|store|route)
       comment: common vue operators
-      scope: forest
-    - match: \b(import|from|require)\b
+      scope: entity.name.function.coffee
+    - match: |-
+        \b(import|from|require)\b
       scope: green
-    - match: (debugger|\\)
-      scope: bred
-    - match: (await|module.exports|exports|export default|export)
+    - match: |-
+        \b(await|module.exports|exports|export default|export)\b
       scope: i.bred
-    - match: \b[A-Z0-9_]+[A-Z0-9]+\b
+    - match: \b[A-Z][A-Z0-9_]*\b
       comment: constant
       scope: myConstant
-    - match: (\([^()]*?\))\s*([=-]>)
+    - match: |-
+        (\([^()]*?\))\s*([=-]>)
       comment: "function ie. ->"
       scope: bblue
       captures:
@@ -52,8 +67,9 @@ contexts:
         2: bblue
     - match: ([=-]>)
       scope: bblue
-    - match: ((?<=console\.)(assert|table|debug|warn|info|log|error|warn|count|time|timeEnd|assert))\b
-      scope: bblue
+    - match: console\.(assert|table|debug|warn|info|log|error|warn|count|time|timeEnd|assert)
+      captures:
+        1: bblue
     - match: (new)\s+((?!class)\w+(?:\.\w*)*)
       scope: meta.class.instance.constructor
       comment: initiaize a new object
@@ -132,12 +148,12 @@ contexts:
         \^=|\b(?<![\.\$])(instanceof|new|delete|typeof|and|or|is|isnt|not|super)\b
       comment: operator
       scope: bred
-    - match: '([a-zA-Z\$_](\w|\$|\.)*\s*(?!\::)((:)|(=))(?!(\s*\(.*\))?\s*((=|-)>)))'
-      scope: variable.assignment.coffee
-      captures:
-        1: variable.assignment.coffee
-        4: punctuation.separator.key-value
-        5: keyword.operator.coffee
+    # - match: '([a-zA-Z\$_](\w|\$|\.)*\s*(?!\::)((:)|(=))(?!(\s*\(.*\))?\s*((=|-)>)))'
+    #   scope:
+    #   captures:
+    #     1: variable.assignment.coffee
+    #     4: punctuation.separator.key-value
+    #     5: keyword.operator.coffee
     - match: '(?<=\s|^)([\[\{])(?=.*?[\]\}]\s+[:=])'
       captures:
         0: keyword.operator.coffee
@@ -167,13 +183,6 @@ contexts:
         3: entity.name.function.coffee
         4: variable.parameter.function.coffee
         5: storage.type.function.coffee
-    - match: '^\s*(describe|it|app\.(get|post|put|all|del|delete))[^\w]'
-      comment: Show well-known functions from Express and Mocha in Go To Symbol view
-      push:
-        - meta_scope: meta.function.symbols.coffee
-        - match: $
-          pop: true
-        - include: main
     - match: "[=-]>"
       comment: arrow method function
       scope: b.bblue
@@ -237,6 +246,20 @@ contexts:
         - match: '\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]|37[0-7]?|[4-7][0-7]?|.)'
           scope: purple
         - include: interpolated_coffee
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   embedded_comment:
     - match: (?<!\\)(#).*$\n?
       scope: comment.line.number-sign.coffee

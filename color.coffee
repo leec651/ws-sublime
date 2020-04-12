@@ -2,6 +2,7 @@ fs   = require 'fs'
 path = require 'path'
 data = require './color-constant'
 
+
 colors =
   red:      "#ff0000"
   bred:     "#e82577"
@@ -27,8 +28,8 @@ specials =
     background: colors.dblue
     foreground: colors.blue2
   important:
-    background: colors.lime
-    foreground: colors.black
+    background: colors.red
+    foreground: colors.white
 
 
 bg = (background) -> "#{background}cc"

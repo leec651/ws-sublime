@@ -3,12 +3,20 @@
 <plist version="1.0">
 <dict>
   <key>content</key>
-  <string>{data} = await axios.post ${1:url}, ${2:body}</string>
+  <string>try
+  {data} = await axios.post ${1:url}, ${2:body}$0
+  console.log data
+catch error
+  if error.response
+    console.error error
+    {status, data} = error.response
+  else
+    console.log error.message</string>
   <key>name</key>
-  <string>axios.post</string>
+  <string>axios.try.post</string>
   <key>scope</key>
   <string>source.coffee</string>
   <key>tabTrigger</key>
-  <string>post</string>
+  <string>post-try</string>
 </dict>
 </plist>

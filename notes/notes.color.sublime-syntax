@@ -599,7 +599,7 @@ contexts:
       comment: Highlights
       scope: bblue
     - match: (?![a-zA-Z])\!+[^\!\n\r]+\!*
-      comment: warning/critical - 10
+      comment: warning critical - 10
       scope: important
 
     # ordered, unordered, completed list
