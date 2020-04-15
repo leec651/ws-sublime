@@ -552,10 +552,6 @@ contexts:
 
     # special words or symbols
     - match: |-
-        \b(https?):\/\S+
-      comment: url - 12
-      scope: yellow
-    - match: |-
         \bie\.
       comment: special ie. - 83
       scope: bred
@@ -602,16 +598,37 @@ contexts:
       comment: warning critical - 10
       scope: important
 
+
     # ordered, unordered, completed list
-    - match: ^\s*[xv].+$
+    - match: ^\s*[xv] .+$
       comment: completed list
       scope: comment
-    - match: ^\s*[::\-\.\+]\s
-      comment: unordered list  - 10
-      scope: bred
     - match: ^\s*[\w]+(\. )
       comment: ordered list
       scope: bred
+
+
+
+    # url
+    - match: |-
+        \b(https?):\/\S+
+      comment: url - 12
+      scope: yellow
+    # unordered list
+    - match: |-
+        ^((?!https).){1,30}:
+      comment: stand alone definition - 50
+      scope: bred
+    # stand alone definition
+    - match: |-
+        ^(\s*[::\-\.\+])\s
+      comment: unordered
+      scope: bred
+
+
+
+
+
 
     # strings emphasis
     - match: |-
@@ -626,7 +643,7 @@ contexts:
       comment: string ( )
       captures:
         1: red
-        2: pink
+        2: dyellow
         3: red
     - match: |-
         (\{)([^\}]*)(\})
@@ -642,9 +659,3 @@ contexts:
         1: red
         2: lime
         3: red
-
-    # stand alone definition. stay in the back for perf gain
-    - match: |-
-        ^[^:\/\\]{1,25}:
-      comment: stand alone definition - 50
-      scope: bred

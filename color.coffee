@@ -26,7 +26,7 @@ colors =
 specials =
   myConstant:
     background: colors.dblue
-    foreground: colors.blue2
+    foreground: colors.bblue
   important:
     background: colors.red
     foreground: colors.white
