@@ -606,23 +606,13 @@ contexts:
 
 
     # url
-    - match: |-
-        \b(https?):\/\S+
+    - match: '\b(https?):\/\S+'
       comment: url - 12
       scope: yellow
-    # unordered list
-    - match: |-
-        ^([\w](?!https).){1,30}:
+    # unordered list and definition
+    - match: ^\s*([\-\+\.]? )?([\w\.\-\@\$ ]{1,20}:\s)?
       comment: stand alone definition - 50
       scope: bred
-    # stand alone definition
-    - match: |-
-        ^(\s*[::\-\.\+])\s
-      comment: unordered - 149
-      scope: bred
-
-
-
 
 
 
