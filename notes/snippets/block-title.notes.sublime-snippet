@@ -1,10 +1,9 @@
 <snippet>
 	<content><![CDATA[
 ------------------------------------------------------------
-                ${1:Title}
+                         ${1:Title}
 ------------------------------------------------------------
 
-$0
 ]]></content>
 <description>Block Title for Notes</description>
 <tabTrigger>---</tabTrigger>

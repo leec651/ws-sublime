@@ -540,7 +540,7 @@ contexts:
     #       pop: true
     #     - include: scope:source.yaml
     - match: ^`$
-      comment: complete block
+      comment: complete block 44
       scope: comment
       push:
         - match: '[^`]*'
@@ -553,11 +553,7 @@ contexts:
     # special words or symbols
     - match: |-
         \bie\.
-      comment: special ie. - 83
-      scope: bred
-    - match: |-
-        \bex\.
-      comment: special ex.
+      comment: special ie. - 370
       scope: bred
     - match: |-
         -+>
@@ -601,10 +597,10 @@ contexts:
 
     # ordered, unordered, completed list
     - match: ^\s*[xv] .+$
-      comment: completed list
+      comment: completed list 96
       scope: comment
     - match: ^\s*[\w]+(\. )
-      comment: ordered list
+      comment: ordered list 120
       scope: bred
 
 
@@ -616,13 +612,13 @@ contexts:
       scope: yellow
     # unordered list
     - match: |-
-        ^((?!https).){1,30}:
+        ^([\w](?!https).){1,30}:
       comment: stand alone definition - 50
       scope: bred
     # stand alone definition
     - match: |-
         ^(\s*[::\-\.\+])\s
-      comment: unordered
+      comment: unordered - 149
       scope: bred
 
 
@@ -631,29 +627,25 @@ contexts:
 
 
     # strings emphasis
-    - match: |-
-        (\")([^\"]*)(\")
+    - match: '(\")([^\"]*)(\")'
       comment: string " " - 10
       captures:
         1: red
         2: dyellow
         3: red
-    - match: |-
-        (\()([^\)]*)(\))
+    - match: '(\()([^\)]*)(\))'
       comment: string ( )
       captures:
         1: red
         2: dyellow
         3: red
-    - match: |-
-        (\{)([^\}]*)(\})
+    - match: '(\{)([^\}]*)(\})'
       comment: string { }
       captures:
         1: red
         2: bblue
         3: red
-    - match: |-
-        (\[)([^\]]*)(\])
+    - match: '(\[)([^\]]*)(\])'
       comment: string [ ]
       captures:
         1: red
