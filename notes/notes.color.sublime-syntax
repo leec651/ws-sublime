@@ -590,6 +590,9 @@ contexts:
     - match: ^\s*(\#+[^\#]*\#*)
       comment: Highlights
       scope: bblue
+    - match: ^\s*@.*$
+      comment: Highlights
+      scope: orange
     - match: (?![a-zA-Z])\!+[^\!\n\r]+\!*
       comment: warning critical - 10
       scope: important
@@ -610,7 +613,7 @@ contexts:
       comment: url - 12
       scope: yellow
     # unordered list and definition
-    - match: ^\s*([\-\+\.]? )?([\w\.\-\@\$ ]{1,20}:\s)?
+    - match: ^\s*([\-\+\.]? )?([\w\.\-\@\$& ]{1,30}:\s)?
       comment: stand alone definition - 50
       scope: bred
 
